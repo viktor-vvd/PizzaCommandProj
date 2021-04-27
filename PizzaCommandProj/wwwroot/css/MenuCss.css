@@ -1,0 +1,22 @@
+﻿body {
+}
+
+li {
+    
+}
+.content {
+    text-align: center;
+    font-family: "Quicksand";
+}
+
+h4, h2 {
+    color: #2150FD;
+    font-family: "Quicksand";
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("~/fonts/Quicksand-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

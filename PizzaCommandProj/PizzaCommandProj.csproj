@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\css\site.css">
+    <Content Update="wwwroot\css\site - Копировать.css">
+      <DependentUpon>site.scss</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>site.scss</DependentUpon>
     </Content>
     <Content Update="wwwroot\css\site.scss">
       <Generator>SassTranspiler</Generator>
