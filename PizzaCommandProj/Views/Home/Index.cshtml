@@ -1,8 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="slider">
+    <div class="verticaldivs v1">
+        <a asp-area="" asp-controller="Home" asp-action="DarocoBourse">
+            <img src="~/logo-bourse.svg" />
+            <div class="daroco-bourse2">
+                <h3>Daroco Bourse</h3>
+                <br>
+                <p class="adresse">6 rue Vivienne Paris 2e</p>
+            </div>
+        </a>
+    </div>
+    <div class="verticaldivs v2" id="leftverticaldiv">
+        <a href="#">
+            <img src="~/logo-16.svg" />
+            <div class="daroco-16">
+                <h3>Daroco 16</h3>
+                <br>
+                <p class="adresse">3 Place Clément Ader Paris 16e</p>
+            </div>
+        </a>
+    </div>
+    <div class="verticaldivs v3" id="centralverticaldiv">
+        <a href="#">
+            <img src="~/logo-danico.svg" />
+            <div class="danico">
+                <h3>Danico</h3>
+                <br>
+                <p class="adresse">6 rue Vivienne Paris 2e</p>
+            </div>
+        </a>
+    </div>
 </div>
