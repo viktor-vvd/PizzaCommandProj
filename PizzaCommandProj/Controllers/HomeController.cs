@@ -28,11 +28,11 @@ namespace PizzaCommandProj.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult DarocoBourse()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult DarocoBourse()
+        //{
+        //    return View();
+        //}
 
         [HttpGet]
         public IActionResult Menu()
