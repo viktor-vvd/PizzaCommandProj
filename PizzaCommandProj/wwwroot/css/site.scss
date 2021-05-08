@@ -277,7 +277,6 @@ a {
             color: #eeecdd;
             cursor: pointer;
             letter-spacing: 1px;
-            aspect-ratio: auto 129 / 150;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -551,6 +550,7 @@ h1 {
         margin-top: 48px;
         margin-bottom: 0;
     }
+
     .slogan {
         padding-left: 35px;
         padding-right: 35px;
@@ -571,29 +571,29 @@ h1 {
     letter-spacing: 0.5px;
 }
 
- .content .col-left {
+.content .col-left {
     order: 3;
     width: 400px;
 }
 
 @media screen and (max-width: 1200px) {
-     .content .col-left {
+    .content .col-left {
         width: 333px;
     }
 }
 
 @media screen and (max-width: 970px) {
-     .content .col-left {
+    .content .col-left {
         order: 4;
         width: 100%;
     }
 }
 
- .content .col-left .informations ul {
+.content .col-left .informations ul {
     margin-bottom: 104px;
 }
 
- .content .col-left .informations ul li {
+.content .col-left .informations ul li {
     padding-left: 37px;
     margin-bottom: 19px;
     color: #E8E4CF;
@@ -614,7 +614,7 @@ h1 {
     background-image: url('\\img\icon-phone.svg');
 }
 
- .content .col-left .informations ul li.adresse a,  .content .col-left .informations ul li.tel a,  .content .col-left .informations ul li.instagram a {
+.content .col-left .informations ul li.adresse a, .content .col-left .informations ul li.tel a, .content .col-left .informations ul li.instagram a {
     position: relative;
     display: inline-block;
     padding-bottom: 2px;
@@ -622,7 +622,7 @@ h1 {
     letter-spacing: 0;
 }
 
- .content .col-left .informations ul li.adresse a:after,  .content .col-left .informations ul li.tel a:after,  .content .col-left .informations ul li.instagram a:after {
+.content .col-left .informations ul li.adresse a:after, .content .col-left .informations ul li.tel a:after, .content .col-left .informations ul li.instagram a:after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -634,7 +634,7 @@ h1 {
     opacity: 0.3;
 }
 
- .content .col-left .informations ul li.adresse a:hover,  .content .col-left .informations ul li.tel a:hover,  .content .col-left .informations ul li.instagram a:hover {
+.content .col-left .informations ul li.adresse a:hover, .content .col-left .informations ul li.tel a:hover, .content .col-left .informations ul li.instagram a:hover {
     color: #D0C120;
 }
 
@@ -648,14 +648,16 @@ h1 {
     background-image: url('\\img\icon-instagram.svg');
 }
 
- .content .col-left .img-portrait {
+.content .col-left .img-portrait {
     position: relative;
     display: block;
     width: 100%;
+    top: 0px;
     opacity: 1;
+    padding: 0px;
 }
 
- .content .col-left .img-portrait:before {
+.content .col-left .img-portrait:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -668,8 +670,17 @@ h1 {
     transition: all ease 0.5s;
 }
 
- .content .col-left .img-portrait.daroco-bourse:before {
+.content .col-left .img-portrait.daroco-bourse:before {
     background-color: #03232A;
+}
+.content .col-left .img-portrait.daroco-bourse span {
+    position: absolute;
+    top: 25px;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    width: 100%;
+    z-index: 3
 }
 
 .content .col-left .img-portrait:after {
@@ -678,19 +689,21 @@ h1 {
     left: 50%;
     z-index: 2;
     display: block;
-    width: 54px;
-    height: 51px;
+    width: 104px;
+    height: 101px;
     content: " ";
     opacity: 0;
-    background-image: url('\\img\eye-blanc.svg'); 
+    //background-image: url('\\img\eye-blanc.svg');
     transform: translateX(-50%) translateY(-50%);
     transition: all ease 0.5s;
 }
-
+    
 @media screen and (max-width: 970px) {
-     .content .col-left .img-portrait {
+    .content .col-left .img-portrait {
         padding-bottom: 48px;
     }
+    }
+@media screen and (max-width: 970px) {
     .content .col-left .img-portrait:after {
         position: absolute;
         bottom: 0;
@@ -698,17 +711,16 @@ h1 {
         z-index: 3;
         display: block;
         width: 330px;
-        height: 96px;
-        padding-left: 145px;
+        height: 196px;
         content: "galerie photo";
         opacity: 1;
         color: #101114;
         font-weight: 500;
         font-size: 12px;
         text-transform: uppercase;
-        line-height: 96px;
+        line-height: 306px;
         background-color: #eeecdd;
-        background-image: url('\\img\eye-noir.svg'); 
+        //background-image: url('\\img\eye-noir.svg');
         background-size: 30px 28px;
         background-repeat: no-repeat;
         background-position: 85px center;
@@ -716,17 +728,17 @@ h1 {
     }
 }
 
- .content .col-left .img-portrait:hover:before {
+.content .col-left .img-portrait:hover:before {
     opacity: 0.73;
     transition: all ease 0.5s;
 }
 
- .content .col-left .img-portrait:hover:after {
+.content .col-left .img-portrait:hover:after {
     opacity: 1;
     transition: all ease 0.5s;
 }
 
- .content .col-left .img-portrait img {
+.content .col-left .img-portrait img {
     position: relative;
     z-index: 1;
     display: block;
@@ -736,19 +748,19 @@ h1 {
     transition: all ease 0.5s;
 }
 
- .content .col-right {
+.content .col-right {
     order: 4;
     width: 670px;
 }
 
 @media screen and (max-width: 1200px) {
-     .content .col-right {
+    .content .col-right {
         width: 554px;
     }
 }
 
 @media screen and (max-width: 970px) {
-     .content .col-right {
+    .content .col-right {
         order: 3;
         width: 100%;
         padding-left: 35px;
@@ -756,7 +768,7 @@ h1 {
     }
 }
 
- .content .col-right .description {
+.content .col-right .description {
     margin-bottom: 110px;
     color: #E8E4CF;
     font-size: 16px;
@@ -764,12 +776,12 @@ h1 {
     font-weight: 200;
 }
 
- .content .col-right .description p {
+.content .col-right .description p {
     margin-bottom: 20px;
     letter-spacing: 0.2px;
 }
 
- .content .col-right .galerie {
+.content .col-right .galerie {
     position: relative;
     display: block;
     width: 100%;
@@ -777,12 +789,12 @@ h1 {
 }
 
 @media screen and (max-width: 970px) {
-     .content .col-right .galerie {
+    .content .col-right .galerie {
         display: none;
     }
 }
 
- .content .col-right .galerie:before {
+.content .col-right .galerie:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -795,7 +807,7 @@ h1 {
     transition: all ease 0.5s;
 }
 
- .content .col-right .galerie.daroco-bourse:before {
+.content .col-right .galerie.daroco-bourse:before {
     background-color: #03232A;
 }
 
@@ -809,22 +821,22 @@ h1 {
     height: 51px;
     content: " ";
     opacity: 0;
-    background-image: url('\\img\eye-blanc.svg'); 
+    //background-image: url('\\img\eye-blanc.svg');
     transform: translateX(-50%) translateY(-50%);
     transition: all ease 0.5s;
 }
 
- .content .col-right .galerie:hover:before {
+.content .col-right .galerie:hover:before {
     opacity: 0.73;
     transition: all ease 0.5s;
 }
 
- .content .col-right .galerie:hover:after {
+.content .col-right .galerie:hover:after {
     opacity: 1;
     transition: all ease 0.5s;
 }
 
- .content .col-right .galerie img {
+.content .col-right .galerie img {
     position: relative;
     z-index: 1;
     display: block;
@@ -834,26 +846,26 @@ h1 {
     transition: all ease 0.5s;
 }
 
- footer {
+footer {
     height: 100px;
     padding: 40px 0;
 }
 
 @media screen and (max-width: 970px) {
-     footer {
+    footer {
         height: auto;
         padding: 70px 0 90px;
         margin-top: 50px;
     }
 }
 
- footer .left ul li {
+footer .left ul li {
     display: inline-block;
     text-align: center;
 }
 
 @media screen and (max-width: 970px) {
-     footer .left ul li {
+    footer .left ul li {
         display: block;
         margin: auto;
     }
@@ -862,13 +874,13 @@ h1 {
 footer .left ul li:not(:last-child) {
     margin-right: 20px;
     padding-right: 51px;
-    background-image: url('\\img\vagues.svg'); 
+    background-image: url('\\img\vagues.svg');
     background-repeat: no-repeat;
     background-position: right center;
 }
 
 @media screen and (max-width: 970px) {
-     footer .left ul li:not(:last-child) {
+    footer .left ul li:not(:last-child) {
         margin-right: 0;
         margin-bottom: 20px;
         padding-right: 0;
@@ -877,32 +889,32 @@ footer .left ul li:not(:last-child) {
     }
 }
 
- footer .left ul li a {
+footer .left ul li a {
     color: white;
     font-weight: 200;
     letter-spacing: 0.2px;
 }
 
- footer .left ul li a:hover {
+footer .left ul li a:hover {
     color: #D0C120;
 }
 
 @media screen and (max-width: 970px) {
-     footer .right ul {
+    footer .right ul {
         margin-bottom: 50px;
         text-align: center;
     }
 }
 
- footer .right ul li {
+footer .right ul li {
     display: inline-block;
 }
 
- footer .right ul li:not(:last-child) {
+footer .right ul li:not(:last-child) {
     margin-right: 52px;
 }
 
- footer .right ul li a {
+footer .right ul li a {
     display: inline-block;
 }
 
