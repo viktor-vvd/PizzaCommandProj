@@ -1,0 +1,52 @@
+﻿@model PizzaCommandProj.Models.Order
+
+@{
+    ViewData["Title"] = "Confirm Order";
+}
+
+<h1>Confirm Order</h1>
+
+<h4>
+    @{
+        Write(ViewBag.DishName.ToString() + ' ' + ViewBag.DishAmount.ToString()+"$");
+    }
+</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NewOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payment" class="control-label"></label>
+                <input asp-for="Payment" class="form-control" />
+                <span asp-validation-for="Payment" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="visibility: hidden;">
+                <label asp-for="DishId" class="control-label"></label>
+                <input asp-for="DishId" class="form-control" value="ViewBag.DishId" />
+                <span asp-validation-for="DishId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Menu</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -11,11 +11,11 @@ namespace PizzaCommandProj.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly PizzaContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(PizzaContext context)
         {
-            _logger = logger;
+            db = context;
         }
 
         public IActionResult Index()
@@ -26,6 +26,30 @@ namespace PizzaCommandProj.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        private Dish GetDishById(int? id)
+        {
+            if (id == null)
+                return null;
+            return db.Find(typeof(Dish), id) as Dish;
+        }
+
+        public IActionResult NewOrder(int dishId)
+        {
+            Dish dish = GetDishById(dishId);
+            ViewBag.DishAmount = dish.Price;
+            ViewBag.DishName = dish.Name;
+            ViewBag.DishId = dish.Id;
+            return View("NewOrder");
+        }
+
+        [HttpPost]
+        public IActionResult NewOrder(Order @order)
+        {
+            order.Status = "Confirmed";
+            db.Orders.Add(@order);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         //[HttpGet]

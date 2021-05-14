@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace PizzaCommandProj.Models
 {
-    public class User
+    public class Dish
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public int Price { get; set; }
 
         [Required]
-        public string FullName { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public string PassHash { get; set; }
+        public string Category { get; set; }
 
-        [Required]
-        public DateTime BirthdTime { get; set; }
+        public string Contain { get; set; }
+
     }
 }
