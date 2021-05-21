@@ -1,83 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Menu";
-}
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="~/css/MenuCss.css">
+﻿@model IEnumerable<PizzaCommandProj.Models.Dish>
+    @{
+        ViewData["Title"] = "Menu";
+    }
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="~/css/MenuCss.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
-</head>
-<body>
-    
-    <div class="content">
-        <div class="whiteBack">
-            </br>
-            
-            <h2>Restaurant menu </h2><h3>Daroco Bourse</h3><h4>Aperitivi</h4>
-            <ul>
-                <li><p class="center"><a href="#">Arancini, Mushrooms and Mozzarella</a> &nbsp;<em>8</em></p></li>
-                <li><p class="center"><a href="#" class="center">Parma's ham</a> <i>14</i></p></li>
-                <li><p class="center"><a href="#">Parmigiano Reggiano 24 months old, Old Balsamic</a>&nbsp;<em>9</em></p></li>
-                <li><p class="center"><a href="#">Focaccia with Rosemary and Parmesan</a> <em>8</em></p></li>
-                <li><p class="center"><a href="#">'Nduja cheese</a>  <em>8</em></p></li>
-                <li><p class="center"><a href="#">Ankle boot</a>  <em>8</em></p></li></br>
-            </ul>
-            <h4>Appetizers</h4>
-            <ul>
-                <li><p class="center"><a href="#">Veal tartare, Capers, Parmesan cream</a> &nbsp;<em>14</em></p></li>
-                <li><p class="center"><a href="#">Buffalo PDO Mozzarella, Anchois de Cetara</a>&nbsp;<em>15</em></p></li>
-                <li><p class="center"><a href="#">Sarde in Saor</a> &nbsp;<em>14</em></p></li>
-                <li><p class="center"><a href="#">Scrambled with Truffle</a> &nbsp;<em>18</em></p></li></br>
-            </ul>
-            <h4>Pasta</h4>
-            <ul>
-                <li><p class="center"><a href="#">Linguine alla Vongole</a>&nbsp;<em>23</em></p></li>
-                <li><p class="center"><a href="#">Trofie alla Norma</a>&nbsp;<em>19</em></p></li>
-                <li><p class="center"><a href="#">Ravioli di Stracciatella, Sauce Tomate, Datterino</a>&nbsp;<em>26</em></p></li>
-                <li><p class="center"><a href="#">Pappardelle au Ragoût de Poulpe</a>&nbsp;<em>25</em></p></li>
-                <li><p class="center"><a href="#">Gnocchi, N'duja Calabrese, Brocoli et Olive Taggiasche</a>&nbsp;<em>21</em></p></li>
-                <li><p class="center"><a href="#">Linguine al Tartufo (Tuber Uncinatum)</a>&nbsp;<em>32</em></p></li></br>
-            </ul>
-            <h4>Secondi &amp; Piatti freddi</h4>
-            <ul>
-                <li><p class="center"><a href="#">Caponakchouka</a>&nbsp;<em>23</em></p></li>
-                <li><p class="center"><a href="#">Côtelettes d'Agneau rôties au Thym, Pommes de Terre au Four</a>&nbsp;<em>31</em></p></li>
-                <li><p class="center"><a href="#">Filet de Dorade grillé, Artichaut Poivrade</a>&nbsp;<em>27</em></p></li></br>
-            </ul>
-            <h4>Pizzas</h4>
-            <ul>
-                <li><p class="center"><a href="#"><strong>Margherita <em>12</em></strong></a></p></li>
-                <li>Tomato Sauce, Milk Flower, Basil </li>
-                <li><p class="center"><a href="#"><strong>Napoli <em>14</em></strong></a></p></li>
-                <li>Sauce Tomate, Anchois de Cetara, Tomates cerises, Olives Taggiasche, Ail, Origan, Basilic</li>
-                <li><p class="center"><a href="#"><strong>Parmigiana <em>16</em></strong></a></p></li>
-                <li>Fior di latte, Aubergine Frit, Sauce Tomate, Pesto de Basilic, Copeaux de parmesan</li>
-                <li><p class="center"><a href="#"><strong>A Tuna Matata <em>16</em></strong></a></p></li>
-                <li>Fior di latte, Tomate cerise Jaune, Roquette, Thon Cetara, Oignon rouge, Salsa Tonato</li>
-                <li><p class="center"><a href="#"><strong>Parigi <em>17</em></strong></a></p></li>
-                <li>Sauce tomate, Fior di latte, Jambon blanc &amp; Champignons de Paris, Cébettes</li>
-                <li><p class="center"><a href="#"><strong>Formaggissima <em>17</em></strong></a></p></li>
-                <li>Fior di latte, Gorgonzola, Scamorza fumée, Parmesan, Ricotta de Vache, Pistache</li>
-                <li><p class="center"><a href="#"><strong>Fais Toi Sale &amp; Kiss <em>18.5</em></strong></a></p></li>
-                <li>Artichaut à la Romaine, Tapenade d'Olive,Bresaola,Fêta</li>
-                <li><p class="center"><a href="#"><strong>Fiamma <em>18</em></strong></a></p></li>
-                <li>Sauce tomate, Fior di latte, Spianata, 'Nduja Oignon rouge confit, Stracciatella</li>
-                <li><p class="center"><a href="#"><strong>Parma Show <em>19</em></strong></a></p></li>
-                <li>Sauce tomate, Mozzarella di Bufala, Prosciutto di Parma, Basilic</li>
-                <li><p class="center"><a href="#"><strong>Pizza al Tartufo (Tuber Uncinatum) <em>32</em></strong></a></p></li>
-                <li>Crème de champignons, Truffe </li></br>
-            </ul>
-            <h4>Dolci</h4>
-            <ul>
-                <li><p class="center"><a href="#">Gelato, 1, 2 ou 3 Parfums </a><em>4/7/9</em></p></li>
-                <li><p class="center"><a href="#">Pizza Nocciolatta</a>&nbsp;<em>10</em></p></li>
-                <li><p class="center"><a href="#">Panna Cotta, Coulis d'Abricots, Pistache</a>&nbsp;<em>9</em></p></li>
-                <li><p class="center"><a href="#">Tiramisu </a><em>9</em></p></li>
-                <li><p class="center"><a href="#">Mousse aux Chocolats</a>&nbsp;<em>9</em></li></p></br>
-            </ul>
+    </head>
+    <body>
+        <div class="content">
+            <div class="whiteBack">
+                </br>
+                @foreach (var item in Model)
+                {
+
+                    <h2>Restaurant menu </h2><h3>Daroco Bourse</h3><h4>@Html.DisplayFor(modelItem => item.Category)</h4>
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em></p></li>
+                    </ul>
+
+                }
+            </div>
         </div>
-        </div>
-</body>
+    </body>
 </html>
