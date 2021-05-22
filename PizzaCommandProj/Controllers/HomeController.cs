@@ -23,6 +23,11 @@ namespace PizzaCommandProj.Controllers
             return View();
         }
 
+        public IActionResult OrderSuccess()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -49,7 +54,7 @@ namespace PizzaCommandProj.Controllers
             order.Status = "Confirmed";
             db.Orders.Add(@order);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("OrderSuccess");
         }
 
         //[HttpGet]
