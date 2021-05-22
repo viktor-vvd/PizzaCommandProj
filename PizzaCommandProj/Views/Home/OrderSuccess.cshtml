@@ -1,23 +1,14 @@
 ﻿@model PizzaCommandProj.Models.Order
 
 @{
-    ViewData["Title"] = "Confirm Order";
+    ViewData["Title"] = "Order Confirmed Successfully";
 }
 
-<h2>Confirm Order</h2>
 
 <h4>
-        @ViewBag.DishName @ViewBag.DishAmount.ToString()$
+    Order Confirmed Successfully!
 </h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <h4>
-            Order Confirmed Successfully!
-        </h4>
-    </div>
-</div>
-
 <div>
     <a asp-action="Menu">Back to Menu</a>
 </div>
