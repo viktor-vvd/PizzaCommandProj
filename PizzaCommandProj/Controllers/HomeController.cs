@@ -61,7 +61,7 @@ namespace PizzaCommandProj.Controllers
         [HttpGet]
         public IActionResult Menu()
         {
-            return View();
+            return View("Menu", db.Dishes);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
