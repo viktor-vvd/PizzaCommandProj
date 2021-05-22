@@ -7,9 +7,7 @@
 <h1>Confirm Order</h1>
 
 <h4>
-    @{
-        Write(ViewBag.DishName.ToString() + ' ' + ViewBag.DishAmount.ToString()+"$");
-    }
+        @ViewBag.DishName @ViewBag.DishAmount.ToString()$
 </h4>
 <hr />
 <div class="row">

@@ -19,7 +19,7 @@
 
                     <h2>Restaurant menu </h2><h3>Daroco Bourse</h3><h4>@Html.DisplayFor(modelItem => item.Category)</h4>
                     <ul>
-                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em></p></li>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { Id = item.Id })</a></p></li>
                     </ul>
 
                 }
