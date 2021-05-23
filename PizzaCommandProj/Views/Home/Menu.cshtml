@@ -1,29 +1,90 @@
 ﻿@model IEnumerable<PizzaCommandProj.Models.Dish>
-    @{
-        ViewData["Title"] = "Menu";
-    }
-    <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="~/css/MenuCss.css">
+@{
+    ViewData["Title"] = "Menu";
+}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="~/css/MenuCss.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        <div class="content">
-            <div class="whiteBack">
-                </br>
-                @foreach (var item in Model)
+</head>
+<body>
+    <div class="content">
+        <div class="whiteBack">
+            </br>
+            <h2>Restaurant menu </h2>
+            <h4>Daroco Bourse</h4>
+            <h3>Aperitivi</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Aperitivi")
                 {
-
-                    <h2>Restaurant menu </h2><h3>Daroco Bourse</h3><h4>@Html.DisplayFor(modelItem => item.Category)</h4>
                     <ul>
                         <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                     </ul>
-
                 }
-            </div>
-        </div>
-    </body>
+            }
+            <h4>Daroco Bourse</h4>
+            <h3>Appetizers</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Appetizers")
+                {
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                    </ul>
+                }
+            }
+            <h4>Daroco Bourse</h4>
+            <h3>Pasta</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Pasta")
+                {
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                    </ul>
+                }
+            }
+            <h4>Daroco Bourse</h4>
+            <h3>Secondi & Piatti freddi</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Secondi & Piatti freddi")
+                {
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                    </ul>
+                }
+            }
+            <h4>Daroco Bourse</h4>
+            <h3>Pizzas</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Pizzas")
+                {
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                    </ul>
+                }
+            }
+            <h4>Daroco Bourse</h4>
+            <h3>Dolci</h3>
+            @foreach (var item in Model)
+            {
+                @if (item.Category == "Dolci")
+                {
+                    <ul>
+                        <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                    </ul>
+                }
+            }
+            <h4>Daroco <br /><br />Bourse</h4>
+            <h3><p class="center"><a asp-action="Index" style="color: #004352;">Back</a></p></h3>
+
+</div>
+    </div>
+</body>
 </html>

@@ -37,7 +37,7 @@ a {
 .center a:hover:before {
     transform: scaleX(1);
 }
-h4, h2 {
+h3, h2 {
     color: #004352;
     font-family: "Quicksand";
 }
@@ -92,7 +92,7 @@ h4, h2 {
         transform: scaleX(1);
     }
 
-    h4, h2 {
+    h3, h2 {
         color: #2150FD;
         font-family: "Quicksand";
     }
