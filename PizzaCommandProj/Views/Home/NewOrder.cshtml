@@ -3,43 +3,53 @@
 @{
     ViewData["Title"] = "Confirm Order";
 }
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="~/css/BuyPage.css">
 
-<h2>Confirm Order</h2>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
-<h4>
-        @ViewBag.DishName @ViewBag.DishAmount.ToString()$
-</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="NewOrder">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Adress" class="control-label"></label>
-                <input asp-for="Adress" class="form-control" />
-                <span asp-validation-for="Adress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Payment" class="control-label"></label>
-                <input asp-for="Payment" class="form-control" />
-                <span asp-validation-for="Payment" class="text-danger"></span>
-            </div>
-            <div class="form-group" style="visibility: hidden;">
-                <label asp-for="DishId" class="control-label"></label>
-                <input asp-for="DishId" class="form-control" value="ViewBag.DishId" />
-                <span asp-validation-for="DishId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+</head>
+<body>
+    <div class="content">
+        <div class="whiteBack">
+            <h2>Confirm Order</h2>
+
+            <h4>
+                @ViewBag.DishName @ViewBag.DishAmount.ToString()$
+            </h4>
+            <hr>
+            <form asp-action="NewOrder">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Adress" class="control-label"></label>
+                    <input asp-for="Adress" class="form-control" />
+                    <span asp-validation-for="Adress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Payment" class="control-label"></label>
+                    <input asp-for="Payment" class="form-control" />
+                    <span asp-validation-for="Payment" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="visibility: hidden;">
+                    <label asp-for="DishId" class="control-label"></label>
+                    <input asp-for="DishId" class="form-control" value="ViewBag.DishId" />
+                    <span asp-validation-for="DishId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Buy" class="btn from-center" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</body>
+</html>
 
 <div>
     <a asp-action="Menu">Back to Menu</a>

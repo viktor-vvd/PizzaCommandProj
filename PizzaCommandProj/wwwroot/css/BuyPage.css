@@ -1,0 +1,149 @@
+﻿html, body {
+    background-image: url("../1579552126_3-p-foni-dlya-menyu-9.jpg");
+    background-attachment: fixed, scroll;
+    background-repeat: no-repeat, repeat-y;
+}
+
+label, input {
+    color: black;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px 0;
+}
+form {
+    margin-top: 5%;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+}
+.content {
+    text-align: center;
+    font-family: "Quicksand";
+    padding-top: 1%;
+    height: 100%;
+    position: absolute;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    color: black;
+}
+.from-center:before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    border: 1px solid var(--inv);
+    border-left: 0;
+    border-right: 0;
+}
+
+.from-center:after {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: var(--inv);
+}
+
+.from-center:hover:before {
+    left: 0;
+    width: 100%;
+}
+
+.from-center:hover:after {
+    top: 0;
+    height: 100%;
+}
+h4, h2 {
+    color: #004352;
+    font-family: "Quicksand";
+}
+.whiteBack {
+    border-radius: 10px;
+    background-color: white;
+    width: 750px;
+    height: 40%;
+    position:absolute;
+    left: 600px;
+    opacity: 0.7;
+}
+@media (max-width: 480px) {
+
+    html, body {
+        background-image: url("../1579552126_3-p-foni-dlya-menyu-9.jpg");
+        background-attachment: fixed, scroll;
+        background-repeat: no-repeat, repeat-y;
+    }
+    li {
+        color: black;
+        list-style-type: none;
+    }
+
+    .content {
+    text-align: center;
+    font-family: "Quicksand";
+    padding-top: 1%;
+    height: 100%;
+    position: absolute;
+    }
+
+    a {
+        text-decoration: none;
+        position: relative;
+        color: black;
+    }
+
+    .from-center:before {
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 0;
+        border: 1px solid var(--inv);
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .from-center:after {
+        bottom: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background: var(--inv);
+    }
+
+    .from-center:hover:before {
+        left: 0;
+        width: 100%;
+    }
+
+    .from-center:hover:after {
+        top: 0;
+        height: 100%;
+    }
+
+    h4, h2 {
+        color: #2150FD;
+        font-family: "Quicksand";
+    }
+
+    .whiteBack {
+        border-radius: 10px;
+        background-color: white;
+        width: 350px;
+        height: 100%;
+        position: absolute;
+        left: 10px;
+        opacity: 0.7;
+
+
+    }
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("~/fonts/Quicksand-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
