@@ -15,8 +15,10 @@ form {
     margin-top: 5%;
 }
 input[type=submit] {
-    background-color: #4CAF50;
-    width: 100px;
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: "Quicksand";
 }
 .content {
     text-align: center;
@@ -141,7 +143,7 @@ text would be below the div's.
 
 
 #text {
-    margin-top: -35px;
+    margin-top: -52px;
     text-align: center;
 }
 
