@@ -34,7 +34,11 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Payment" class="control-label"></label>
-                    <input asp-for="Payment" class="form-control" />
+                    <select asp-for="Payment" class="form-control">
+                        <option value="Card" selected>Card</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                    @*<input asp-for="Payment" class="form-control" />*@
                     <span asp-validation-for="Payment" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="visibility: hidden;">

@@ -4,17 +4,19 @@
     background-repeat: no-repeat, repeat-y;
 }
 
-label, input {
+label, input, select {
     color: black;
     list-style-type: none;
     padding: 10px;
     margin: 10px 0;
+    width: 150px;
 }
 form {
     margin-top: 5%;
 }
 input[type=submit] {
     background-color: #4CAF50;
+    width: 100px;
 }
 .content {
     text-align: center;
