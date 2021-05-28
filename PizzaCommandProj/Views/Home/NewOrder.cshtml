@@ -33,8 +33,12 @@
                     <span asp-validation-for="Adress" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Payment" class="control-label" style="padding-left: -4px;"></label>
-                    <input asp-for="Payment" class="form-control" />
+                    <label asp-for="Payment" class="control-label"></label>
+                    <select asp-for="Payment" class="form-control">
+                        <option value="Card" selected>Card</option>
+                        <option value="Cash">Cash</option>
+                    </select>
+                    @*<input asp-for="Payment" class="form-control" />*@
                     <span asp-validation-for="Payment" class="text-danger"></span>
                 </div>
                 <div class="form-group" style="visibility: hidden;">
@@ -42,15 +46,9 @@
                     <input asp-for="DishId" class="form-control" value="ViewBag.DishId" />
                     <span asp-validation-for="DishId" class="text-danger"></span>
                 </div>
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <a href=""> <span class="spot"></span><input type="submit" value="Buy" class="btn from-center" /></a>
-                        </div>
-                    </svg>
+                <div class="form-group">
+                    <input type="submit" value="Buy" class="btn from-center" />
                 </div>
-
             </form>
         </div>
     </div>
