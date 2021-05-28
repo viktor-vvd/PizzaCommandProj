@@ -46,8 +46,13 @@
                     <input asp-for="DishId" class="form-control" value="ViewBag.DishId" />
                     <span asp-validation-for="DishId" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Buy" class="btn from-center" />
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <a href=""> <span class="spot"></span><input type="submit" value="Buy" class="btn from-center" /></a>
+                        </div>
+                    </svg>
                 </div>
             </form>
         </div>
