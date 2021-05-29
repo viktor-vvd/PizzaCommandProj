@@ -38,13 +38,16 @@ namespace PizzaCommandProj.Controllers
                 return null;
             return db.Find(typeof(Dish), id) as Dish;
         }
-
+        int d_id=-333;
+        int d_amount=-333;
         public IActionResult NewOrder(int dishId)
         {
             Dish dish = GetDishById(dishId);
             ViewBag.DishAmount = dish.Price;
             ViewBag.DishName = dish.Name;
             ViewBag.DishId = dish.Id;
+            d_amount = dish.Price;
+            d_id = dish.Id;
             return View("NewOrder");
         }
 
@@ -52,6 +55,8 @@ namespace PizzaCommandProj.Controllers
         public IActionResult NewOrder(Order @order)
         {
             order.Status = "Confirmed";
+            order.DishId = d_id;
+            order.Amount = d_amount;
             db.Orders.Add(@order);
             db.SaveChanges();
             return RedirectToAction("OrderSuccess");
@@ -68,6 +73,11 @@ namespace PizzaCommandProj.Controllers
         {
             return View("Menu", db.Dishes);
         }
+        [HttpGet]
+        //public IActionResult Orders()
+        //{
+        //    return View("Orders", db.Orders);
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
