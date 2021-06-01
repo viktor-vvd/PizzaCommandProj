@@ -15,6 +15,8 @@ namespace PizzaCommandProj_Management.Controllers
         private bool logged;
         private string errors;
 
+        //Login: "admin" Password: "odmenotboga"
+
         public HomeController(PizzaContext context)
         {
             logged = false;
@@ -50,6 +52,11 @@ namespace PizzaCommandProj_Management.Controllers
         private void DeleteDishById(int dishId)
         {
             db.Dishes.Remove(GetDishById(dishId));
+            db.SaveChanges();
+        }
+        private void DeleteOrderById(int orderId)
+        {
+            db.Orders.Remove(GetOrderById(orderId));
             db.SaveChanges();
         }
         public IActionResult Logination(Admin @odmen)
@@ -174,6 +181,15 @@ namespace PizzaCommandProj_Management.Controllers
             return RedirectToAction("AllOrders", db.Orders);
         }
 
+        public IActionResult DeleteOrder(int orderId)
+        {
+            //if (!logged)
+            //{
+            //    return RedirectToAction("Index");
+            //}
+            DeleteOrderById(orderId);
+            return RedirectToAction("AllOrders", db.Orders);
+        }
 
         public IActionResult Privacy()
         {

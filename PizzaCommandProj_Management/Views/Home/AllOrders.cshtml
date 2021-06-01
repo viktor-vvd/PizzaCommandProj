@@ -59,6 +59,7 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
+                    @Html.ActionLink("Delete", "DeleteOrder", new { orderId = item.Id }) |
                     @Html.ActionLink("Canceled", "CanceledOrder", new { orderId = item.Id }) |
                     @Html.ActionLink("In process", "InProcessOrder", new { orderId = item.Id }) |
                     @Html.ActionLink("Delivered", "DeliveredOrder", new { orderId = item.Id }) |
