@@ -4,11 +4,30 @@
     ViewData["Title"] = "Order Confirmed Successfully";
 }
 
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="~/css/OrderS.css">
 
-<h4>
-    Order Confirmed Successfully!
-</h4>
-<hr />
-<div>
-    <a asp-action="Menu">Back to Menu</a>
-</div>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="content">
+            <div class="whiteBack">
+                <h2>Order Confirmed Successfully!</h2>
+                <hr>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <a asp-action="Menu">Back to Menu<span class="spot"></span></a>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+
