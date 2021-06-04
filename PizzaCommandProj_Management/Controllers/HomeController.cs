@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PizzaCommandProj_Management.Models;
 using System;
@@ -12,29 +13,26 @@ namespace PizzaCommandProj_Management.Controllers
     public class HomeController : Controller
     {
         private readonly PizzaContext db;
-        private bool logged;
-        private string errors;
 
         //Login: "admin" Password: "odmenotboga"
+        //Login: "worker" Password: "bestworkerever"
 
         public HomeController(PizzaContext context)
         {
-            logged = false;
-            errors = "";
             db = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(ErrorViewModel errors)
         {
-            //if (logged)
-            //{
-                //return RedirectToAction("AllDishes");
-            //}
-                ViewBag.ERRORR = errors;
-                return View();
+            if (CurUser != null)
+            {
+                return RedirectToAction("AllDishes");
+            }
+            ViewBag.ERRORR = errors.RequestId;
+            return View();
         }
         public IActionResult LogOut()
         {
-            logged = false;
+            Response.Cookies.Delete("user");
             return RedirectToAction("Index");
         }
         private Dish GetDishById(int? id)
@@ -63,41 +61,55 @@ namespace PizzaCommandProj_Management.Controllers
         {
             if (odmen.Login == "admin" && odmen.Password == "odmenotboga")
             {
-                logged = true;
+                CookieOptions userCookieOptions = new CookieOptions();
+                userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+                Response.Cookies.Append("user", odmen.Login, userCookieOptions);
+                return RedirectToAction("AllDishes");
+            }
+            else if (odmen.Login == "worker" && odmen.Password == "bestworkerever")
+            {
+                CookieOptions userCookieOptions = new CookieOptions();
+                userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+                Response.Cookies.Append("user", odmen.Login, userCookieOptions);
                 return RedirectToAction("AllDishes");
             }
             else
             {
-                errors = "Wrong login or password";
-                return RedirectToAction("Index");
+                ErrorViewModel errors = new ErrorViewModel();
+                errors.RequestId="Wrong login or password";
+                return RedirectToAction("Index", errors);
             }
         }
+
+        private string CurUser => Request.Cookies["user"];
+
+        [HttpGet]
         public IActionResult AllDishes()
         {
-            //if (logged==false)
-            //{
-            //    return RedirectToAction("Index");
-            //}
-            errors = "";
+            if (CurUser==null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.User = CurUser;
             return View("AllDishes", db.Dishes);
         }
 
         public IActionResult NewDish()
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             return View("NewDish");
         }
 
         [HttpPost]
         public IActionResult NewDish(Dish @dish)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             db.Dishes.Add(@dish);
             db.SaveChanges();
             return RedirectToAction("AllDishes", db.Dishes);
@@ -105,10 +117,10 @@ namespace PizzaCommandProj_Management.Controllers
 
         public IActionResult EditDish(int id)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             Dish dish = GetDishById(id);
             return View(dish);
         }
@@ -116,10 +128,10 @@ namespace PizzaCommandProj_Management.Controllers
         [HttpPost]
         public IActionResult EditDish(Dish dish)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             db.Dishes.Update(dish);
             db.SaveChanges();
             return RedirectToAction("AllDishes", db.Dishes);
@@ -127,29 +139,30 @@ namespace PizzaCommandProj_Management.Controllers
 
         public IActionResult DeleteDish(int dishId)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             DeleteDishById(dishId);
             return RedirectToAction("AllDishes", db.Dishes);
         }
 
         public IActionResult AllOrders()
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.User = CurUser; 
             return View("AllOrders", db.Orders);
         }
 
         public IActionResult CanceledOrder(int orderId)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             Order order = GetOrderById(orderId);
             order.Status = "Canceled";
             db.Orders.Update(order);
@@ -158,10 +171,10 @@ namespace PizzaCommandProj_Management.Controllers
         }
         public IActionResult InProcessOrder(int orderId)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             Order order = GetOrderById(orderId);
             order.Status = "In process";
             db.Orders.Update(order);
@@ -170,10 +183,10 @@ namespace PizzaCommandProj_Management.Controllers
         }
         public IActionResult DeliveredOrder(int orderId)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             Order order = GetOrderById(orderId);
             order.Status = "Delivered";
             db.Orders.Update(order);
@@ -183,10 +196,10 @@ namespace PizzaCommandProj_Management.Controllers
 
         public IActionResult DeleteOrder(int orderId)
         {
-            //if (!logged)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            if (CurUser == null)
+            {
+                return RedirectToAction("Index");
+            }
             DeleteOrderById(orderId);
             return RedirectToAction("AllOrders", db.Orders);
         }
