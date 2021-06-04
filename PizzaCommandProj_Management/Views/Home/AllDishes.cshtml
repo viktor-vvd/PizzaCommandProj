@@ -31,36 +31,39 @@
             <th>
                 @Html.DisplayNameFor(model => model.Contain)
             </th>
-            <th></th>
+            @if (@ViewBag.User == "admin")
+            {
+                <th></th>
+            }
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td class="idd">
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contain)
+            </td>
+            @if (@ViewBag.User == "admin")
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @Html.ActionLink("Edit", "EditDish", new { dishId = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteDish", new { dishId = item.Id })
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Contain)
-                </td>
-                @if (@ViewBag.User == "admin")
-                {
-                    <td>
-                        @Html.ActionLink("Edit", "EditDish", new { dishId = item.Id }) |
-                        @Html.ActionLink("Delete", "DeleteDish", new { dishId = item.Id })
-                    </td>
-                }
-            </tr>
+            }
+        </tr>
         }
     </tbody>
 </table>

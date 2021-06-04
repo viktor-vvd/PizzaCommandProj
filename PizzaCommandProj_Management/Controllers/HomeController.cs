@@ -100,6 +100,10 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("Index");
             }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllDishes");
+            }
             return View("NewDish");
         }
 
@@ -109,6 +113,10 @@ namespace PizzaCommandProj_Management.Controllers
             if (CurUser == null)
             {
                 return RedirectToAction("Index");
+            }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllDishes");
             }
             db.Dishes.Add(@dish);
             db.SaveChanges();
@@ -121,6 +129,10 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("Index");
             }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllDishes");
+            }
             Dish dish = GetDishById(id);
             return View(dish);
         }
@@ -132,6 +144,10 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("Index");
             }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllDishes");
+            }
             db.Dishes.Update(dish);
             db.SaveChanges();
             return RedirectToAction("AllDishes", db.Dishes);
@@ -142,6 +158,10 @@ namespace PizzaCommandProj_Management.Controllers
             if (CurUser == null)
             {
                 return RedirectToAction("Index");
+            }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllDishes");
             }
             DeleteDishById(dishId);
             return RedirectToAction("AllDishes", db.Dishes);
@@ -199,6 +219,10 @@ namespace PizzaCommandProj_Management.Controllers
             if (CurUser == null)
             {
                 return RedirectToAction("Index");
+            }
+            if (CurUser != "admin")
+            {
+                return RedirectToAction("AllOrders");
             }
             DeleteOrderById(orderId);
             return RedirectToAction("AllOrders", db.Orders);

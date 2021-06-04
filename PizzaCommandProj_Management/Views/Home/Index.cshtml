@@ -21,9 +21,19 @@
                 <input type="password" asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Sign in" class="btn btn-primary" />
+
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        @*<a href=""> <span class="spot"></span>*@<input type="submit" value="Sign in" class="btn from-center" />@*</a>*@
+                    </div>
+                </svg>
             </div>
+
+            @*<div class="form-group">
+                <input type="submit" value="Sign in" class="btn btn-primary" />
+            </div>*@
         </form>
     </div>
 </div>
