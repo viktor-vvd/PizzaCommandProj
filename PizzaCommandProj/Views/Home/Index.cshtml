@@ -13,72 +13,91 @@
                 <img width="129" height="150" src="~/logo-bourse.svg" alt="Logo Daroco Bourse" class="wow pulse" data-wow-iteration="100" data-wow-duration="5s" style="position:absolute; left: 850px;">
             </a>
         </div>
-        <h1><a href="#content" title="En savoir plus sur le Daroco Bourse">Daroco Bourse</a></h1>
+        <h1><a href="#first" class="scrollto" title="En savoir plus sur le Daroco Bourse">Daroco Bourse</a></h1>
         <nav class="daroco-bourse">
             <ul>
                 <li><a class="popup-btn" asp-action="Menu" popup-ajax="carte" popup-param="15" title="Carte du restaurant"><span class="wide">Menu</span></a></li>
             </ul>
         </nav>
         <div id="content" class="content wrapper">
-                <h2 class="slogan wow fadeInDown">
-                    Modern day trattoria
-                </h2>
+            <h2 class="slogan wow fadeInDown" id="first">
+                Modern day trattoria
+            </h2>
 
             <div class="col-left">
                 <div class="informations wide wow fadeInDown">
-                        <ul>
-                            <li class="adresse">
-                                <a href="#" target="_blank" title="Visualiser le restaurant sur Google Map">6 rue Vivienne, 75002 Paris</a>
-                            </li>
-                            <li class="tel">
-                                <a href="tel:0142219371" title="Téléphoner au restaurant">tel : 01 42 21 93 71</a>
-                            </li>
-                            <li class="ouverture">
-                                Open every day from noon to midnight
-                            </li>
-                            <li class="instagram">
-                                <a href="https://www.instagram.com/daroco_paris/" target="_blank" title="Visitez notre profil Instagram">@@Daroco_paris</a>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li class="adresse">
+                            <a href="#" target="_blank" title="Visualiser le restaurant sur Google Map">6 rue Vivienne, 75002 Paris</a>
+                        </li>
+                        <li class="tel">
+                            <a href="tel:0142219371" title="Téléphoner au restaurant">tel : 01 42 21 93 71</a>
+                        </li>
+                        <li class="ouverture">
+                            Open every day from noon to midnight
+                        </li>
+                        <li class="instagram">
+                            <a href="https://www.instagram.com/daroco_paris/" target="_blank" title="Visitez notre profil Instagram">@@Daroco_paris</a>
+                        </li>
+                    </ul>
                 </div>
 
                 <a class="img-portrait popup-btn daroco-bourse wow fadeInLeft" popup-ajax="galerie" popup-param="15" title="" data-sr-id="3" style="visibility: visible; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 20, 0, 1);">
                     <span>
                         Halcyon of your taste
                     </span>
-                    <img src="~/img/DBourse-3.jpg" alt="Error" >
+                    <img src="~/img/DBourse-3.jpg" alt="Error">
                 </a>
             </div>
 
             <div class="col-right">
-                    <div class="description">
-                        <p class="wow fadeInRight">In 2016, the two accomplices Alexandre Giesbert and Julien Ross set up their <strong>Italian restaurant</strong> with extraordinary dimensions in the former Jean-Paul Gaultier boutique. Located rue Vivienne, at the beginning of the mythical Galerie Vivienne and a stone's throw from the Place de la <strong>Bourse</strong> and the <strong>Palais Brongniart</strong>, the Daroco sensation attracts all the fashion and <strong>trendy</strong> thanks to an ultra desirable equation: delicious plates, well-made liquids, bubbling atmosphere and disproportionate decor. The ideal table for all the (good) moments in life: a dinner with friends, a professional lunch, between two meetings or a large table with the whole family on weekends, always carried by an attentive service including Daroco has the secret. </p>
-                        <p class="wow fadeInRight" data-wow-duration = "1.3s">Installed in the former sewing workshops of Jean-Paul Gaultier, Daroco Bourse is a unique <strong>design</strong>, thought out with genius by architects Olivier Delannoy and Francesca Errico, awarded the Fooding prize for best decor in 2017. The stunning mirror-ceiling reflects the green marble tables, the terrazzo floor, the magnificent concrete columns, the vegetation, and, the highlight of the show: the <strong>open kitchen</strong> where pizzaioli take turns preparing of arms of <strong>stylish pizzas</strong> well rolled in the purest Neapolitan tradition. </p>
-                        <p class="wow fadeInRight" data-wow-duration = "1.6s">At tavola, Daroco Bourse sends the best of fresh Italian products, sourced as close as possible to the producers of its “Secret Boot”: pasta made on site at <strong>the best pizza in Paris</strong> (even your life) from chef Federico Schiavon, master of the great classics of the trattoria. To be washed down with a glass of Italian wine, a cocktail signed by the king of the shaker <strong>Nico de Soto</strong> or a craft beer to be sipped against a background of catchy playlists simmered by the Specter collective. </p>
-                        <p class="wow fadeInRight" data-wow-duration = "1.9s">For bands: <strong>private event</strong>, <strong>group dinner</strong>, <strong>birthday</strong>, cocktail lunch or dinner, <strong>conference</strong>, small-lunch, <strong>dinner or corporate evening</strong>, <strong>space for privatization</strong>. </p>
-                    </div>
+                <div class="description">
+                    <p class="wow fadeInRight">In 2016, the two accomplices Alexandre Giesbert and Julien Ross set up their <strong>Italian restaurant</strong> with extraordinary dimensions in the former Jean-Paul Gaultier boutique. Located rue Vivienne, at the beginning of the mythical Galerie Vivienne and a stone's throw from the Place de la <strong>Bourse</strong> and the <strong>Palais Brongniart</strong>, the Daroco sensation attracts all the fashion and <strong>trendy</strong> thanks to an ultra desirable equation: delicious plates, well-made liquids, bubbling atmosphere and disproportionate decor. The ideal table for all the (good) moments in life: a dinner with friends, a professional lunch, between two meetings or a large table with the whole family on weekends, always carried by an attentive service including Daroco has the secret. </p>
+                    <p class="wow fadeInRight" data-wow-duration="1.3s">Installed in the former sewing workshops of Jean-Paul Gaultier, Daroco Bourse is a unique <strong>design</strong>, thought out with genius by architects Olivier Delannoy and Francesca Errico, awarded the Fooding prize for best decor in 2017. The stunning mirror-ceiling reflects the green marble tables, the terrazzo floor, the magnificent concrete columns, the vegetation, and, the highlight of the show: the <strong>open kitchen</strong> where pizzaioli take turns preparing of arms of <strong>stylish pizzas</strong> well rolled in the purest Neapolitan tradition. </p>
+                    <p class="wow fadeInRight" data-wow-duration="1.6s">At tavola, Daroco Bourse sends the best of fresh Italian products, sourced as close as possible to the producers of its “Secret Boot”: pasta made on site at <strong>the best pizza in Paris</strong> (even your life) from chef Federico Schiavon, master of the great classics of the trattoria. To be washed down with a glass of Italian wine, a cocktail signed by the king of the shaker <strong>Nico de Soto</strong> or a craft beer to be sipped against a background of catchy playlists simmered by the Specter collective. </p>
+                    <p class="wow fadeInRight" data-wow-duration="1.9s">For bands: <strong>private event</strong>, <strong>group dinner</strong>, <strong>birthday</strong>, cocktail lunch or dinner, <strong>conference</strong>, small-lunch, <strong>dinner or corporate evening</strong>, <strong>space for privatization</strong>. </p>
+                </div>
+            </div>
 
+        </div>
+        <div style="clear:both;">
 
-                @*<a class="galerie" popup-ajax="galerie" popup-param="15" title="Galerie photos du restaurant" data-sr-id="5" style="visibility: visible; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 20, 0, 1);">
-                        <img src="~/img/DBourse-3.jpg" alt="r">
-                    </a>*@
+        </div>
+        <div id="content" class="content wrapper">
+            <h2 class="slogan wow fadeInDown">
+                Our cafe is very comfortable
+            </h2>
+
+            <div class="col-left">
+                <div class="informations wide wow fadeInDown">
+
+                </div>
+
+                <a class="img-portrait popup-btn daroco-bourse wow fadeInLeft" popup-ajax="galerie" popup-param="15" title="" data-sr-id="3" style="visibility: visible; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 20, 0, 1);">
+                    <span>
+                        It is nice here
+                    </span>
+                    <img src="~/img/daroco-paris.jpg" alt="Error">
+                </a>
+            </div>
+
+            <div class="col-right">
+                <div class="description">
+                    <p class="wow fadeInUp" data-wow-duration="1.9s">In 2016, the two accomplices Alexandre Giesbert and Julien Ross set up their <strong>Italian restaurant</strong> with extraordinary dimensions in the former Jean-Paul Gaultier boutique. Located rue Vivienne, at the beginning of the mythical Galerie Vivienne and a stone's throw from the Place de la <strong>Bourse</strong> and the <strong>Palais Brongniart</strong>, the Daroco sensation attracts all the fashion and <strong>trendy</strong> thanks to an ultra desirable equation: delicious plates, well-made liquids, bubbling atmosphere and disproportionate decor. The ideal table for all the (good) moments in life: a dinner with friends, a professional lunch, between two meetings or a large table with the whole family on weekends, always carried by an attentive service including Daroco has the secret. </p>
+                    <p class="wow fadeInUp" data-wow-duration="1.8s">Installed in the former sewing workshops of Jean-Paul Gaultier, Daroco Bourse is a unique <strong>design</strong>, thought out with genius by architects Olivier Delannoy and Francesca Errico, awarded the Fooding prize for best decor in 2017. The stunning mirror-ceiling reflects the green marble tables, the terrazzo floor, the magnificent concrete columns, the vegetation, and, the highlight of the show: the <strong>open kitchen</strong> where pizzaioli take turns preparing of arms of <strong>stylish pizzas</strong> well rolled in the purest Neapolitan tradition. </p>
+                    <p class="wow fadeInUp" data-wow-duration="1.6s">At tavola, Daroco Bourse sends the best of fresh Italian products, sourced as close as possible to the producers of its “Secret Boot”: pasta made on site at <strong>the best pizza in Paris</strong> (even your life) from chef Federico Schiavon, master of the great classics of the trattoria. To be washed down with a glass of Italian wine, a cocktail signed by the king of the shaker <strong>Nico de Soto</strong> or a craft beer to be sipped against a background of catchy playlists simmered by the Specter collective. </p>
+                    <p class="wow fadeInUp" data-wow-duration="1.3s">For bands: <strong>private event</strong>, <strong>group dinner</strong>, <strong>birthday</strong>, cocktail lunch or dinner, <strong>conference</strong>, small-lunch, <strong>dinner or corporate evening</strong>, <strong>space for privatization</strong>. </p>
+                </div>
 
             </div>
 
         </div>
         <footer id="colophon" class="site-footer wrapper" role="contentinfo">
-            <!-- <div class="right">
-                <ul>
-                    <li><a class="instagram" href="https://www.instagram.com/daroco_paris/" target="_blank"></a></li>
-                    <li><a class="facebook" href="https://www.facebook.com/DAROCO-207596229577766" target="_blank"></a></li>
-                </ul>
-            </div> -->
-
             <div class="left">
                 <ul>
                     <li class="mentions wow fadeInUpBig"><a class="popup-btn" popup-ajax="page" popup-param="mentions-legales" title="Mentions Légales">Legal Notice</a></li>
-                    <li class="credits wow fadeInUpBig" data-wow-duration = "1.3s"><a class="popup-btn" popup-ajax="page" popup-param="credits" title="Crédits">Credits</a></li>
-                    <li class="recrutement wow fadeInUpBig" data-wow-duration = "1.6s"><a class="popup-btn" popup-ajax="recrutement" popup-param="15" title="Rejoignez-nous">Join us</a></li>
+                    <li class="credits wow fadeInUpBig" data-wow-duration="1.3s"><a class="popup-btn" popup-ajax="page" popup-param="credits" title="Crédits">Credits</a></li>
+                    <li class="recrutement wow fadeInUpBig" data-wow-duration="1.6s"><a class="popup-btn" popup-ajax="recrutement" popup-param="15" title="Rejoignez-nous">Join us</a></li>
                 </ul>
             </div>
 
@@ -87,6 +106,7 @@
 
     </div>
     <script src="~/js/wow.min.js"></script>
+    <script src="~/js/Jquery-latest.js" type="text/javascript"></script>
     <script>
         wow = new WOW(
             {
@@ -98,6 +118,16 @@
             }
         )
         wow.init();
+
+        jQuery(document).ready(function () {
+            jQuery("a.scrollto").click(function () {
+                elementClick = jQuery(this).attr("href")
+                destination = jQuery(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, 1500);
+                return false;
+            });
+        });
     </script>
+
 </body>
 </html>
