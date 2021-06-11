@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 
 body {
@@ -776,10 +777,15 @@ h1 {
     font-weight: 200;
 }
 
-.content .col-right .description p {
-    margin-bottom: 20px;
-    letter-spacing: 0.2px;
+.content .col-6 .description {
+    margin-bottom: 110px;
+    color: #E8E4CF;
+    font-size: 16px;
+    text-align:center;
+    line-height: 26px;
+    font-weight: 200;
 }
+
 
 .content .col-right .galerie {
     position: relative;
