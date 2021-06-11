@@ -123,7 +123,7 @@ namespace PizzaCommandProj_Management.Controllers
             return RedirectToAction("AllDishes", db.Dishes);
         }
 
-        public IActionResult EditDish(int id)
+        public IActionResult EditDish(int dishId)
         {
             if (CurUser == null)
             {
@@ -133,7 +133,7 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("AllDishes");
             }
-            Dish dish = GetDishById(id);
+            Dish dish = GetDishById(dishId);
             return View(dish);
         }
 
