@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css//animate/animate.css">
 </head>
 <body>
-    <div id="restaurant" class="darocobourse">
+    <div id="mainanim" class="darocobourse">
         <div class="head">
             <div class="big-bg" style="background-image: url('\\bg-bourse.jpg');"></div>
             <a href="/" title="Retour au choix des restaurants">
@@ -91,6 +91,7 @@
 
             </div>
 
+
         </div>
         <footer id="colophon" class="site-footer wrapper" role="contentinfo">
             <div class="left">
@@ -107,6 +108,9 @@
     </div>
     <script src="~/js/wow.min.js"></script>
     <script src="~/js/Jquery-latest.js" type="text/javascript"></script>
+    <script src="~/js/p5.min.js" type="text/javascript"></script>
+    <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
+
     <script>
         wow = new WOW(
             {
@@ -127,6 +131,19 @@
                 return false;
             });
         });
+
+        VANTA.TOPOLOGY({
+            el: "#mainanim",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x156070,
+            backgroundColor: 0x9404d
+        })
     </script>
 
 </body>
