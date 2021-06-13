@@ -134,6 +134,7 @@ namespace PizzaCommandProj_Management.Controllers
                 return RedirectToAction("AllDishes");
             }
             Dish dish = GetDishById(dishId);
+            DeleteDishById(dishId);
             return View(dish);
         }
 
@@ -148,6 +149,7 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("AllDishes");
             }
+            
             db.Dishes.Update(dish);
             db.SaveChanges();
             return RedirectToAction("AllDishes", db.Dishes);

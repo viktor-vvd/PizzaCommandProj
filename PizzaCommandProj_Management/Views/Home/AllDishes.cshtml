@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PizzaCommandProj_Management.Models.Dish>
 
 @{
-    ViewData["Title"] = "AllDishes";
+    ViewData["Title"] = "All Dishes";
 }
 
 <p>User: @ViewBag.User</p>
@@ -17,7 +17,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -38,11 +38,15 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            int m = 0;
+        }
         @foreach (var item in Model)
         {
+            m++;
         <tr>
-            <td class="idd">
-                @Html.DisplayFor(modelItem => item.Id)
+            <td class="idd">                
+                @m
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
