@@ -1,7 +1,7 @@
 ﻿html, body {
-    background-image: url("../1579552126_3-p-foni-dlya-menyu-9.jpg");
-    background-attachment: fixed, scroll;
-    background-repeat: no-repeat, repeat-y;
+    display: inline-block;
+    background-color: #004352;
+    overflow: hidden;
 }
 
 label, input, select {
@@ -20,6 +20,10 @@ input[type=submit] {
     text-align: center;
     font-family: "Quicksand";
 }
+.mainP {
+    height: 100%;
+    width: 100%;
+}
 .content {
     text-align: center;
     font-family: "Quicksand";
@@ -27,6 +31,7 @@ input[type=submit] {
     height: 100%;
     position: absolute;
 }
+
 
 a {
     text-decoration: none;
