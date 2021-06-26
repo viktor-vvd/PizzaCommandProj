@@ -33,7 +33,7 @@
             </th>
             @if (@ViewBag.User == "admin")
             {
-                <th></th>
+                <th width="110px"></th>
             }
         </tr>
     </thead>
@@ -62,7 +62,7 @@
             </td>
             @if (@ViewBag.User == "admin")
             {
-                <td>
+                <td width="110px">
                     @Html.ActionLink("Edit", "EditDish", new { dishId = item.Id }) |
                     @Html.ActionLink("Delete", "DeleteDish", new { dishId = item.Id })
                 </td>
