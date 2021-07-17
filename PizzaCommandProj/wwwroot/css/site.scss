@@ -387,7 +387,7 @@ h1 {
 .daroco-bourse {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
+    color: white;
     box-sizing: border-box;
     margin: 0;
     border: 0;
@@ -401,12 +401,12 @@ h1 {
     display: inline-block;
     padding: 40px 70px;
     height: 96px;
-    background-color: #03232A;
+    background-color: #764232;
 
     ul {
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
-        color: #eeecdd;
+        color: #251a11;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -419,7 +419,7 @@ h1 {
         li:not(:last-child) {
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
-            color: #eeecdd;
+            color: white;
             list-style: none;
             box-sizing: border-box;
             margin: 0;
@@ -451,7 +451,7 @@ h1 {
                 font: inherit;
                 vertical-align: baseline;
                 outline: 0;
-                color: #eeecdd;
+                color: white;
                 text-decoration: none;
                 transition-duration: 0.4s;
                 transition-property: color, border-color;
@@ -464,7 +464,7 @@ h1 {
         li {
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
-            color: #eeecdd;
+            color: white;
             list-style: none;
             box-sizing: border-box;
             margin: 0;
@@ -491,7 +491,7 @@ h1 {
                 font: inherit;
                 vertical-align: baseline;
                 outline: 0;
-                color: #eeecdd;
+                color: white;
                 text-decoration: none;
                 transition-duration: 0.4s;
                 transition-property: color, border-color;
@@ -518,7 +518,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: top calc(100vh - 48px) right;
     overflow: hidden;
-    background-color: #004352;
+    background-color: #251a11;
 }
 
 #content {
