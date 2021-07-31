@@ -1,0 +1,56 @@
+﻿.body--night-mode {
+    background-color: #222;
+    color: darken(white, 15%);
+}
+
+.thumbler
+{
+    width: 100px;
+    height:50px;
+    position:absolute;
+    left: 400px;
+
+}
+
+.tumbler__wrapper {
+    margin-left: auto;
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    border: darken(#aae2f1, 40);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+
+.mysvg {
+    width: 15px;
+    height: 15px;
+}
+
+.tumbler
+{
+position: absolute;
+height: 20px;
+width: 20px;
+border-radius: 50%;
+background-color: #fff;
+transition: transform .5s, background-color .5s;
+will-change: transform;
+}
+
+.tumbler--night-mode
+{
+transform: translateX(calc(100% - 2px));
+}
+
+.sun-svg,
+.moon-svg
+{
+display: none;
+}
