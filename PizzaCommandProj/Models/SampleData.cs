@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PizzaCommandProj.Models
 {
@@ -66,7 +68,7 @@ namespace PizzaCommandProj.Models
                         Adress = "Lutsk, Voli, 11",//qwerty
                         Payment = "Card",
                         Status = "Delivered",
-                        DishId = 2
+                        DishesId = "2~3~5"
                     }
                 );
                 context.SaveChanges();

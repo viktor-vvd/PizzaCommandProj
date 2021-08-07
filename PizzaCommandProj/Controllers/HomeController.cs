@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using PizzaCommandProj.Models;
 using System;
@@ -13,6 +15,7 @@ namespace PizzaCommandProj.Controllers
     {
         private readonly PizzaContext db;
 
+        private Order CurOrder => JsonSerializer.Deserialize<Order>(Request.Cookies["order"]);
         public HomeController(PizzaContext context)
         {
             db = context;
@@ -38,30 +41,79 @@ namespace PizzaCommandProj.Controllers
                 return null;
             return db.Find(typeof(Dish), id) as Dish;
         }
+        public IActionResult AddCart(int dishId)
+        {
+            Order o;
+            if (!Request.Cookies.ContainsKey("order"))
+            {
+                o = new Order();
+                o.Amount = 0;
+                o.DishesId = "";
+            }
+            else
+                o = CurOrder;
+            if(o.DishesId=="")
+                o.DishesId+=dishId.ToString();
+            else
+                o.DishesId += ("~"+dishId.ToString());
+            CookieOptions userCookieOptions = new CookieOptions();
+            userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+            //var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(o);
+            Response.Cookies.Append("order", jsonString, userCookieOptions);
+
+            return View("Menu", db.Dishes);
+        }
         public IActionResult NewOrder(int dishId)
         {
-            Dish dish = GetDishById(dishId);
-            ViewBag.DishAmount = dish.Price;
-            ViewBag.DishName = dish.Name;
-            ViewBag.DishId = dishId;
+            Order o;
+            if (!Request.Cookies.ContainsKey("order"))
+            {
+                o = new Order();
+                o.Amount = 0;
+                o.DishesId = "";
+            }
+            else
+                o = CurOrder;
+            if (o.DishesId == "")
+                o.DishesId += dishId.ToString();
+            else
+                o.DishesId += ("~" + dishId.ToString());
+            List<string> result = o.DishesId.Split('~').ToList();
+            foreach (var dishid in result)
+            {
+                if(!dishid.Contains("~"))
+                { 
+                    Dish dish = GetDishById(Convert.ToInt32(dishid));
+                    o.Amount += dish.Price;
+                    ViewBag.DishName = dish.Name;
+                }
+            }
+                ViewBag.DishAmount = o.Amount;////////////////////////////////////////////////////////////
+            CookieOptions userCookieOptions = new CookieOptions();
+            userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+            //var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(o);
+            Response.Cookies.Append("order", jsonString, userCookieOptions);
             return View("NewOrder");
         }
 
         [HttpPost]
         public IActionResult NewOrder(Order @order)
         {
+            order.Amount=CurOrder.Amount;
+            //order.DishesId=CurOrder.DishesId;
+            order.DishesId=CurOrder.DishesId;
             order.Status = "Confirmed";
-            //if (d_id != -333)
-            //{
-                //order.DishId = d_id;
-                Dish dish = GetDishById(order.DishId);
-                order.Amount = dish.Price;
-                db.Orders.Add(@order);
-                db.SaveChanges();
-                return RedirectToAction("OrderSuccess");
-            //}
-            //else
-            //    return View("NewOrder");
+            order.Amount = CurOrder.Amount;
+            db.Orders.Add(@order);
+            db.SaveChanges();
+            CookieOptions userCookieOptions = new CookieOptions();
+            userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+            string jsonString = JsonSerializer.Serialize(new Order());
+            Response.Cookies.Append("order", jsonString, userCookieOptions);
+            //CurOrder = new Order();
+            return RedirectToAction("OrderSuccess");
         }
 
         //[HttpGet]

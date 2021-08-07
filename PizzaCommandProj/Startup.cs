@@ -30,6 +30,7 @@ namespace PizzaCommandProj
                 COBuilder.UseSqlServer(Configuration.GetConnectionString("DiaryDBConnection"));
             });
             services.AddControllersWithViews();
+            services.AddSession((SessionOptions so) => { so.IdleTimeout = TimeSpan.FromHours(12); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

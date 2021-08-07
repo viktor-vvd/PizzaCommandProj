@@ -66,7 +66,7 @@ namespace PizzaCommandProj_Management.Models
                         Adress = "Lutsk, Voli, 11",//qwerty
                         Payment = "Card",
                         Status = "Delivered",
-                        DishId = 2
+                        DishesId = "2~5"
                     }
                 );
                 context.SaveChanges();

@@ -15,7 +15,8 @@ namespace PizzaCommandProj_Management.Models
         public int Amount { get; set; }
 
         [Required]
-        public int DishId { get; set; }
+        public string DishesId { get; set; }
+        //public List<Int32> DishesId { get; set; }
 
         [Required]
         public string Phone { get; set; }
