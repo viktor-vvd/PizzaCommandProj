@@ -2,8 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
+
 body {
     background-color: dimgray;
     color: white;
@@ -37,168 +37,6 @@ a {
     main {
         height: 100%;
     }
-}
-
-#bg-plume bg-plume-4 small {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    display: none;
-    position: absolute;
-    width: 61px;
-    height: 57px;
-    bottom: 323px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-small-4.svg");
-    z-index: 0;
-    left: 93.7px;
-}
-
-#bg-plume bg-plume-3 small {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    display: none;
-    position: absolute;
-    width: 111px;
-    height: 50px;
-    bottom: 1035px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-small-3.svg");
-    z-index: 0;
-    right: -46.85px;
-}
-
-#bg-plume bg-plume-6 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 338px;
-    height: 553px;
-    bottom: 172px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-6.svg");
-    z-index: 0;
-    right: 112.734px;
-}
-
-#bg-plume bg-plume-5 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 277px;
-    height: 603px;
-    bottom: 148px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-5.svg");
-    z-index: 0;
-    right: -17.6992px;
-}
-
-#bg-plume bg-plume-4 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 763px;
-    height: 848px;
-    bottom: 110px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-4.svg");
-    z-index: 0;
-    left: 69.9158px;
-}
-
-#bg-plume bg-plume-3 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 822px;
-    height: 781px;
-    bottom: 140px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-3.svg");
-    z-index: 0;
-    left: 8.70625px;
-}
-
-#bg-plume bg-plume-2 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 855px;
-    height: 647px;
-    bottom: 205px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-2.svg");
-    z-index: 0;
-    left: 45.8027px;
-}
-
-#bg-plume bg-plume-1 wide {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: #eeecdd;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    position: absolute;
-    width: 1026px;
-    height: 501px;
-    bottom: 238px;
-    background-image: url("https://www.daroco.fr/wp-content/themes/daroco-v2/img/plume-wide-1.svg");
-    z-index: 0;
-    left: -42.0672px;
 }
 
 .nav-home {
@@ -284,7 +122,7 @@ a {
             font-size: 100%;
             font: inherit;
             vertical-align: baseline;
-            position: absolute;
+            position: absolute; //Менял на relative p.s.-не помогло(
             top: 90px;
             left: 50%;
             z-index: 4;
@@ -672,6 +510,7 @@ h1 {
 .content .col-left .img-portrait.daroco-bourse:before {
     background-color: #03232A;
 }
+
 .content .col-left .img-portrait.daroco-bourse span {
     position: absolute;
     top: 25px;
@@ -696,12 +535,13 @@ h1 {
     transform: translateX(-50%) translateY(-50%);
     transition: all ease 0.5s;
 }
-    
+
 @media screen and (max-width: 970px) {
     .content .col-left .img-portrait {
         padding-bottom: 48px;
     }
-    }
+}
+
 @media screen and (max-width: 970px) {
     .content .col-left .img-portrait:after {
         position: absolute;
@@ -779,7 +619,7 @@ h1 {
     margin-bottom: 110px;
     color: #E8E4CF;
     font-size: 16px;
-    text-align:center;
+    text-align: center;
     line-height: 26px;
     font-weight: 200;
 }

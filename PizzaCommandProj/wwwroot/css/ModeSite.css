@@ -1,0 +1,86 @@
+﻿#headh21 .edit {
+    display: none;
+}
+
+    #headh21.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #headh21.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+#headh22 .edit {
+    display: none;
+}
+
+    #headh22.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #headh22.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+#adressblock .edit {
+    display: none;
+}
+
+    #adressblock.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #adressblock.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+#textblock1 .edit {
+    display: none;
+}
+
+    #textblock1.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #textblock1.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+#textblock2 .edit {
+    display: none;
+}
+
+    #textblock2.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #textblock2.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+#footerblock .edit {
+    display: none;
+}
+
+    #footerblock.edit .day {
+        display: initial;
+        color: black;
+    }
+
+    #footerblock.edit .night {
+        display: none;
+        color: #eeecdd;
+    }
+
+
+
