@@ -4,14 +4,12 @@ if (localStorage.count >= 0)
 function func() {
     let div0 = document.getElementById("edit2020");
     if (localStorage.count % 2 == 0) {
-        div0.classList.add("night");
-        if (div0.classList.contains("day"))
             div0.classList.remove("day");
+        div0.classList.add("night");
     }
     else {
-        div0.classList.add("day");
-        if (div0.classList.contains("night"))
             div0.classList.remove("night");
+        div0.classList.add("day");
     }
 
 

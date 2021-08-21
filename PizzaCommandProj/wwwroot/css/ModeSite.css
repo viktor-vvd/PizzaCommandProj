@@ -1,9 +1,9 @@
 ﻿.big-bg .day {
-    background-image: url('../img/WhitePhoto.jpg')
+    background-image: url('file:///C:\Users\Home\source\repos\PizzaCommandProj\PizzaCommandProj\wwwroot\img\WhitePhoto.jpg');
 }
 
 .big-bg .night {
-    background-image: url('\\bg-bourse.jpg')
+    background-image: url('file:///C:\Users\Home\source\repos\PizzaCommandProj\PizzaCommandProj\wwwroot\bg-bourse.jpg');
 }
 
 #headh21 .edit {
