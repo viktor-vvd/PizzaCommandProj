@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PizzaCommandProj.Models.Order>
+
+@{
+    ViewData["Title"] = "All Orders";
+}
+
+<p>User: @ViewBag.User</p>
+<h1>All Orders</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DishesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int m = 0;
+        }
+        @foreach (var item in Model)
+        {
+            m++;
+            <tr>
+                <td class="idd">
+                    @m
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.DishesId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                @if (@ViewBag.User == "admin")
+                {
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteOrder", new { orderId = item.Id }) |
+                        @Html.ActionLink("Canceled", "CanceledOrder", new { orderId = item.Id }) |
+                        @Html.ActionLink("In process", "InProcessOrder", new { orderId = item.Id }) |
+                        @Html.ActionLink("Delivered", "DeliveredOrder", new { orderId = item.Id }) |
+                    </td>
+                }
+                @if (@ViewBag.User == "worker")
+                {
+                    <td>
+                        @Html.ActionLink("Canceled", "CanceledOrder", new { orderId = item.Id }) |
+                        @Html.ActionLink("In process", "InProcessOrder", new { orderId = item.Id }) |
+                        @Html.ActionLink("Delivered", "DeliveredOrder", new { orderId = item.Id }) |
+                    </td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    @Html.ActionLink("Dishes", "AllDishes")
+</p>

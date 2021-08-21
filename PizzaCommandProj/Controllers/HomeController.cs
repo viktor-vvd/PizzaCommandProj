@@ -75,15 +75,15 @@ namespace PizzaCommandProj.Controllers
             }
             else
                 o = CurOrder;
-            if (o.DishesId == "")
+            if (o.DishesId.Length==0)
                 o.DishesId += dishId.ToString();
             else
                 o.DishesId += ("~" + dishId.ToString());
             List<string> result = o.DishesId.Split('~').ToList();
             foreach (var dishid in result)
             {
-                if(!dishid.Contains("~"))
-                { 
+                if(!dishid.Contains("~")&& dishid.Length!=0)
+                {
                     Dish dish = GetDishById(Convert.ToInt32(dishid));
                     o.Amount += dish.Price;
                     ViewBag.DishName = dish.Name;
@@ -108,11 +108,7 @@ namespace PizzaCommandProj.Controllers
             order.Amount = CurOrder.Amount;
             db.Orders.Add(@order);
             db.SaveChanges();
-            CookieOptions userCookieOptions = new CookieOptions();
-            userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
-            string jsonString = JsonSerializer.Serialize(new Order());
-            Response.Cookies.Append("order", jsonString, userCookieOptions);
-            //CurOrder = new Order();
+            Response.Cookies.Delete("order");
             return RedirectToAction("OrderSuccess");
         }
 
@@ -128,9 +124,28 @@ namespace PizzaCommandProj.Controllers
             return View("Menu", db.Dishes);
         }
         [HttpGet]
-        //public IActionResult Orders()
+        //public IActionResult AllCart()
         //{
-        //    return View("Orders", db.Orders);
+        //    Order o;
+        //    if (!Request.Cookies.ContainsKey("order"))
+        //    {
+        //        o = new Order();
+        //        o.Amount = 0;
+        //        o.DishesId = "";
+        //    }
+        //    else
+        //        o = CurOrder;
+        //    if (o.DishesId == "")
+        //        o.DishesId += dishId.ToString();
+        //    else
+        //        o.DishesId += ("~" + dishId.ToString());
+        //    CookieOptions userCookieOptions = new CookieOptions();
+        //    userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+        //    //var options = new JsonSerializerOptions { WriteIndented = true };
+        //    string jsonString = JsonSerializer.Serialize(o);
+        //    Response.Cookies.Append("order", jsonString, userCookieOptions);
+
+        //    return View("Menu", db.Dishes);
         //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
