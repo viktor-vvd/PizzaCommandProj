@@ -1,4 +1,12 @@
-﻿#headh21 .edit {
+﻿.big-bg .day {
+    background-image: url('../img/WhitePhoto.jpg')
+}
+
+.big-bg .night {
+    background-image: url('\\bg-bourse.jpg')
+}
+
+#headh21 .edit {
     display: none;
 }
 
