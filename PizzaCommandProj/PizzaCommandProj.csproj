@@ -23,14 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\css\site.css">
+    <Content Update="wwwroot\css\mainSiteStyle.css">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>site.scss</DependentUpon>
+      <DependentUpon>mainSiteStyle.scss</DependentUpon>
     </Content>
-    <Content Update="wwwroot\css\site.scss">
+    <Content Update="wwwroot\css\mainSiteStyle.scss">
       <Generator>SassTranspiler</Generator>
-      <LastGenOutput>site.css</LastGenOutput>
+      <LastGenOutput>mainSiteStyle.css</LastGenOutput>
     </Content>
   </ItemGroup>
 

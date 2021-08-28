@@ -77,6 +77,35 @@ function func() {
         });
 }
 
+function funcMenu() {
+    if (localStorage.count % 2 == 0)
+        VANTA.TOPOLOGY({
+            el: "#mainanim",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x48270c,
+            backgroundColor: 0xf0d6b3
+        });
+    else
+        VANTA.TOPOLOGY({
+            el: "#mainanim",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x764232,
+            backgroundColor: 0x251a11
+        });
+}
+
 function funcCount() {
     count++;
     localStorage.setItem('count', count);
