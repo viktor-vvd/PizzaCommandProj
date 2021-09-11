@@ -75,7 +75,7 @@ namespace PizzaCommandProj.Controllers
             return o;
         }
 
-        private void MinusOneFromCart(int dishId)//////////////////////////////////////////////////////////////
+        private void MinusOneFromCart(int dishId)
         {
             Order o;
             if (!Request.Cookies.ContainsKey("order"))
@@ -93,7 +93,6 @@ namespace PizzaCommandProj.Controllers
             }
             else
             {
-                //o.DishesId += ("~" + dishId.ToString());
                 o.Amount = 0;
                 List<string> result = o.DishesId.Split('~').ToList();
                 int index = result.IndexOf(dishId.ToString());
@@ -115,10 +114,12 @@ namespace PizzaCommandProj.Controllers
                         }
                     }
                 }
+                o.DishesId = "";
                 foreach (var dishid in result)
                 {
                     if (!dishid.Contains("~") && dishid.Length != 0)
                     {
+                        o.DishesId += dishid + "~";
                         Dish dish = GetDishById(Convert.ToInt32(dishid));
                         o.Amount += dish.Price;
                         ViewBag.DishName = dish.Name;
@@ -143,8 +144,6 @@ namespace PizzaCommandProj.Controllers
             AddToCart(dishId);
             return AllCart();
         }
-
-
 
         public IActionResult AddCart(int dishId)
         {
