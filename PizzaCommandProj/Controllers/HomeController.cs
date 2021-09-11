@@ -132,6 +132,19 @@ namespace PizzaCommandProj.Controllers
             }
         }
 
+        public IActionResult MinusOneCart(int dishId)
+        {
+            MinusOneFromCart(dishId);
+            return AllCart();
+        }
+
+        public IActionResult AddOneCart(int dishId)
+        {
+            AddToCart(dishId);
+            return AllCart();
+        }
+
+
 
         public IActionResult AddCart(int dishId)
         {

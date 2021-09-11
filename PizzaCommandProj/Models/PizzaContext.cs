@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PizzaCommandProj.Models;
 
 namespace PizzaCommandProj.Models
 {
@@ -19,5 +20,7 @@ namespace PizzaCommandProj.Models
         {
             //modelBuilder.Entity<Order>().HasOne(u => u.DishId).WithOne(p => p.Id);
         }
+
+        public DbSet<PizzaCommandProj.Models.CartItem> CartItem { get; set; }
     }
 }
