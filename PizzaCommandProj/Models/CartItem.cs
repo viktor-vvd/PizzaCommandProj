@@ -7,8 +7,11 @@ namespace PizzaCommandProj.Models
 {
     public class CartItem
     {
-        Dish Dish { get; set; }
-        int Quantity { get; set; }
-        int Amount { get; set; }
+        public int DishId { get; set; }
+        public int Price { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public int Quantity { get; set; }
+        public int Amount { get; set; }
     }
 }
