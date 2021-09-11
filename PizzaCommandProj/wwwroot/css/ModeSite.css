@@ -1,9 +1,13 @@
-﻿.big-bg .day {
-    background-image: url('file:///C:\Users\Home\source\repos\PizzaCommandProj\PizzaCommandProj\wwwroot\img\WhitePhoto.jpg');
+﻿#big-bg .edit {
+    display: none;
+}
+/*<div class="big-bg" id="edit2020" > </div >*/
+#edit2020.big-bg.day {
+    background-image: url('../bg-bourse.jpg');
 }
 
-.big-bg .night {
-    background-image: url('file:///C:\Users\Home\source\repos\PizzaCommandProj\PizzaCommandProj\wwwroot\bg-bourse.jpg');
+#edit2020.big-bg.night {
+    background-image: url('../img/WhitePhoto.jpg');
 }
 
 #headh21 .edit {
