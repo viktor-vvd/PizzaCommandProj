@@ -75,7 +75,7 @@ namespace PizzaCommandProj.Controllers
             return o;
         }
 
-        private void MinusOneFromCart(int dishId)//////////////////////////////////////////////////////////////
+        private void MinusOneFromCart(int dishId)
         {
             Order o;
             if (!Request.Cookies.ContainsKey("order"))
@@ -93,7 +93,6 @@ namespace PizzaCommandProj.Controllers
             }
             else
             {
-                //o.DishesId += ("~" + dishId.ToString());
                 o.Amount = 0;
                 List<string> result = o.DishesId.Split('~').ToList();
                 int index = result.IndexOf(dishId.ToString());
@@ -115,10 +114,72 @@ namespace PizzaCommandProj.Controllers
                         }
                     }
                 }
+                o.DishesId = "";
                 foreach (var dishid in result)
                 {
                     if (!dishid.Contains("~") && dishid.Length != 0)
                     {
+                        o.DishesId += dishid + "~";
+                        Dish dish = GetDishById(Convert.ToInt32(dishid));
+                        o.Amount += dish.Price;
+                        ViewBag.DishName = dish.Name;
+                    }
+                }
+
+                CookieOptions userCookieOptions = new CookieOptions();
+                userCookieOptions.Expires = new DateTimeOffset(DateTime.Now + TimeSpan.FromHours(8));
+                string jsonString = JsonSerializer.Serialize(o);
+                Response.Cookies.Append("order", jsonString, userCookieOptions);
+            }
+        }
+        private void DeleteFromCart(int dishId)
+        {
+            Order o;
+            if (!Request.Cookies.ContainsKey("order"))
+            {
+                o = new Order();
+                o.Amount = 0;
+                o.DishesId = "";
+                return;
+            }
+            else
+                o = CurOrder;
+            if (o.DishesId == "")
+            {
+                return;
+            }
+            else
+            {
+                o.Amount = 0;
+                List<string> result = o.DishesId.Split('~').ToList();
+                while (result.Contains(dishId.ToString()))
+                {
+                    int index = result.IndexOf(dishId.ToString());
+                    if (index >= 0)
+                    {
+                        result.RemoveAt(index);
+                        if (result[0] == "~")
+                            result.RemoveAt(0);
+                        else if (result[result.Count - 1] == "~")
+                            result.RemoveAt(result.Count - 1);
+                        else
+                        {
+                            for (int i = 1; i < result.Count - 1; i++)
+                            {
+                                if (result[i] == "~" && result[i - 1] == "~")
+                                    result.RemoveAt(i);
+                                else if (result[i] == "~" && result[i + 1] == "~")
+                                    result.RemoveAt(i);
+                            }
+                        }
+                    }
+                }
+                o.DishesId = "";
+                foreach (var dishid in result)
+                {
+                    if (!dishid.Contains("~") && dishid.Length != 0)
+                    {
+                        o.DishesId += dishid + "~";
                         Dish dish = GetDishById(Convert.ToInt32(dishid));
                         o.Amount += dish.Price;
                         ViewBag.DishName = dish.Name;
@@ -132,6 +193,7 @@ namespace PizzaCommandProj.Controllers
             }
         }
 
+
         public IActionResult MinusOneCart(int dishId)
         {
             MinusOneFromCart(dishId);
@@ -144,7 +206,11 @@ namespace PizzaCommandProj.Controllers
             return AllCart();
         }
 
-
+        public IActionResult DeleteOneCart(int dishId)
+        {
+            DeleteFromCart(dishId);
+            return AllCart();
+        }
 
         public IActionResult AddCart(int dishId)
         {
