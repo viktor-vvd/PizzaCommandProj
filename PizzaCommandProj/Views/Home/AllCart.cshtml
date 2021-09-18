@@ -3,56 +3,104 @@
 @{
     ViewData["Title"] = "AllCart";
 }
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="~/css/BuyPage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="~/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">*@
+        <style>
 
-<h1>AllCart</h1>
+        </style>
+    </head>
+    <body>
+        <div id="mainanim" class="mainP">
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                        @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Category)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.ActionLink("+", "AddOneCart", new { orderId = item.DishId })
+                            @Html.DisplayFor(modelItem => item.Amount)
+                            @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId })
+                        </td>
+                        @*<td>
+                            @Html.ActionLink("+", "AddOneCart", new { orderId = item.DishId }) |
+                            @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId }) |
+                        </td>*@
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <script src="~/js/mainTable.js"></script>
+        <script src="~/js/p5.min.js" type="text/javascript"></script>
+        <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.ActionLink("+", "AddOneCart", new { orderId = item.DishId }) |
-                @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId }) |
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <script>
+            if (localStorage.count % 2 == 0)
+                VANTA.TOPOLOGY({
+                    el: "#mainanim",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 1000.00,
+                    minWidth: 1861.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x48270c,
+                    backgroundColor: 0xf0d6b3
+                });
+            else
+                VANTA.TOPOLOGY({
+                    el: "#mainanim",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 1000.00,
+                    minWidth: 1861.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x764232,
+                    backgroundColor: 0x251a11
+                });
+        </script>
+    </body>
+    </html>
