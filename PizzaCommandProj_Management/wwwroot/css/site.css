@@ -12,13 +12,13 @@ a.navbar-brand {
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
-    border-color: #1861ac;
+    border-color: #764232;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
-    border-color: #1861ac;
+    border-color: #764232;
 }
 
 /* Sticky footer styles
@@ -63,7 +63,7 @@ body {
     background-image: url('\\illustration.png');
     background-repeat: no-repeat;
     background-position: top 55px right;
-    background-color: #004352;
+    background-color: #251a11 /*#764232*/;
     color: #eeecdd;
 }
 
@@ -74,7 +74,7 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
     color: white;
-    background-color: #012C35;
+    background-color: #764232 /*#251a11*/;
 }
 
 main {
@@ -96,7 +96,7 @@ nav a {
 }
 
 nav, thead, .idd {
-    background-color: #012C35;
+    background-color: #764232 /*#251a11*/;
 }
 
 a {
@@ -230,7 +230,7 @@ input[type=submit] {
 #shape {
     stroke-width: 6px;
     fill: transparent;
-    stroke: #009FFD;
+    stroke: #251a11;
     stroke-dasharray: 85 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
@@ -247,7 +247,7 @@ input[type=submit] {
     stroke-dasharray: 50 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
-    stroke: #06D6A0;
+    stroke: #764232;
     color: white;
 }
 

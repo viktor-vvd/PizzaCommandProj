@@ -15,75 +15,79 @@
         <div class="content">
             <div class="whiteBack">
                 </br>
-                <h2>Restaurant menu </h2>
-                <h4>Daroco Bourse</h4>
+                <h1 style="font-family: 'Avenir',sans-serif; font-weight: 100">HIDE</h1>
+                <br />
+                <h2 style="color: #251a11;">Restaurant menu </h2>
+                <br />
                 <h3>Aperitivi</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Aperitivi")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco Bourse</h4>
+                <br />
                 <h3>Appetizers</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Appetizers")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco Bourse</h4>
+                <br />
                 <h3>Pasta</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Pasta")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco Bourse</h4>
+                <br />
                 <h3>Secondi & Piatti freddi</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Secondi & Piatti freddi")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco Bourse</h4>
+                <br />
                 <h3>Pizzas</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Pizzas")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco Bourse</h4>
+                <br />
                 <h3>Dolci</h3>
                 @foreach (var item in Model)
                 {
                     @if (item.Category == "Dolci")
                     {
                         <ul>
-                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price) </em> <a href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> <a href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
+                            <li><p class="center"><a href="#">@Html.DisplayFor(modelItem => item.Name)</a> &nbsp;<em>@Html.DisplayFor(modelItem => item.Price)</em> <a style="color: #764232;" href="#">@Html.ActionLink("Add to Cart", "AddCart", new { dishId = item.Id })</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = item.Id })</a></p></li>
                         </ul>
                     }
                 }
-                <h4>Daroco <br /><br />Bourse</h4>
-                <h3><p class="center"><a asp-action="Index" style="color: #004352;">Back</a></p></h3>
+                <br />
+                <h3><p class="center"><a asp-action="AllCart" style="color: #764232;">Back</a></p></h3>
+                <br />
+                <h3><p class="center"><a asp-action="Index" style="color: #764232;">Back</a></p></h3>
 
             </div>
         </div>

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 html, body {
     display: inline-block;
     /*background-color: #004352;*/
@@ -14,8 +15,8 @@ html, body {
 li {
     color: black;
     list-style-type: none;
-    
 }
+
 .content {
     text-align: center;
     font-family: "Quicksand";
@@ -29,6 +30,7 @@ a {
     position: relative;
     color: black;
 }
+
 .center a::before {
     content: '';
     bottom: 0;
@@ -44,23 +46,28 @@ a {
 .center a:hover:before {
     transform: scaleX(1);
 }
-h3, h2 {
-    color: #004352;
+
+h1, h3, h2 {
+    color: #764232;
     font-family: "Quicksand";
 }
+
 .whiteBack {
     border-radius: 15px;
     background-color: white;
     width: 750px;
     height: 1000px;
-    position:absolute;
+    position: absolute;
     left: 580px;
     opacity: 0.7;
 }
+
 .mainP {
     height: 100%;
     width: 100%;
 }
+
+
 @media (max-width: 480px) {
 
     html, body {
@@ -68,23 +75,24 @@ h3, h2 {
         background-attachment: fixed, scroll;
         background-repeat: no-repeat, repeat-y;
     }
+
     li {
         color: black;
         list-style-type: none;
     }
 
     .content {
-    text-align: center;
-    font-family: "Quicksand";
-    padding-top: 1%;
-    height: 100%;
-    position: absolute;
+        text-align: center;
+        font-family: "Quicksand";
+        padding-top: 1%;
+        height: 100%;
+        position: absolute;
     }
 
     a {
         text-decoration: none;
         position: relative;
-        color: black;
+        color: #764232;
     }
 
     .center a::before {
@@ -103,8 +111,8 @@ h3, h2 {
         transform: scaleX(1);
     }
 
-    h3, h2 {
-        color: #2150FD;
+    h1, h3, h2 {
+        color: #764232;
         font-family: "Quicksand";
     }
 
@@ -116,8 +124,6 @@ h3, h2 {
         position: absolute;
         left: 10px;
         opacity: 0.7;
-
-
     }
 }
 
