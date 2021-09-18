@@ -23,7 +23,7 @@
                 text-align: left;
                 border: none;
                 padding: 10px 15px;
-                background: #F85A38;
+                background: #764232;
                 font-size: 14px;
                 border-left: 1px solid #ddd;
                 border-right: 1px solid #ddd;
@@ -101,10 +101,9 @@
                                 @Html.DisplayFor(modelItem => item.Amount)
                                 @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId })
                             </td>
-                            @*<td>
-                                    @Html.ActionLink("+", "AddOneCart", new { orderId = item.DishId }) |
-                                    @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId }) |
-                                </td>*@
+                            <td>
+                                @Html.ActionLink("Delete", "DeleteOneCart", new { dishId = item.DishId }) |
+                            </td>
                         </tr>
                     }
                 </tbody>
