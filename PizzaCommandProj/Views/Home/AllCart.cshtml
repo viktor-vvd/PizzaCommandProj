@@ -97,9 +97,9 @@
                                 @Html.DisplayFor(modelItem => item.Quantity)
                             </td>
                             <td>
-                                @Html.ActionLink("+", "AddOneCart", new { orderId = item.DishId })
+                                @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
                                 @Html.DisplayFor(modelItem => item.Amount)
-                                @Html.ActionLink("-", "MinusOneCart", new { orderId = item.DishId })
+                                @Html.ActionLink("-", "MinusOneCart", new { dishId = item.DishId })
                             </td>
                             <td>
                                 @Html.ActionLink("Delete", "DeleteOneCart", new { dishId = item.DishId }) |
