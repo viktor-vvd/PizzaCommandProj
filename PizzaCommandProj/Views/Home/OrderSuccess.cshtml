@@ -38,18 +38,36 @@
             <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
 
             <script>
-                VANTA.TOPOLOGY({
-                    el: "#mainanim",
-                    mouseControls: true,
-                    touchControls: true,
-                    gyroControls: false,
-                    minHeight: 200.00,
-                    minWidth: 200.00,
-                    scale: 1.00,
-                    scaleMobile: 1.00,
-                    color: 0x156070,
-                    backgroundColor: 0x004352
-                })
+                if (localStorage.count % 2 == 0) {
+                    document.body.style.backgroundColor = "#251a11;";
+                    VANTA.TOPOLOGY({
+                        el: "#mainanim",
+                        mouseControls: true,
+                        touchControls: true,
+                        gyroControls: false,
+                        minHeight: 1080.00,
+                        minWidth: 1861.00,
+                        scale: 1.00,
+                        scaleMobile: 1.00,
+                        color: 0x48270c,
+                        backgroundColor: 0xf0d6b3
+                    });
+                }
+                else {
+                    document.body.style.backgroundColor = "#F5F3C7;";
+                    VANTA.TOPOLOGY({
+                        el: "#mainanim",
+                        mouseControls: true,
+                        touchControls: true,
+                        gyroControls: false,
+                        minHeight: 1080.00,
+                        minWidth: 1861.00,
+                        scale: 1.00,
+                        scaleMobile: 1.00,
+                        color: 0x764232,
+                        backgroundColor: 0x251a11
+                    });
+                }
             </script>
     </body>
     </html>
