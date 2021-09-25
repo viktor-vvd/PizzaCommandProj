@@ -182,7 +182,7 @@
                                 @Html.DisplayFor(modelItem => item.Category)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Price)$
+                                @Html.DisplayFor(modelItem => item.Price)
                             </td>
                             <td>
                                 @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
@@ -200,9 +200,9 @@
                 </tbody>
             </table>
             <br />
-            <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Total: 0.00</h3>
+            <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Total: @ViewBag.Amount.ToString()</h3>
             <br />
-            <h3 asp-action="Menu" style="color: #764232; font-family: 'Quicksand', sans-serif; width: 30%; text-align: center; vertical-align: top; margin: auto;"><a asp-action="Menu">Back</a> | <a asp-action="NewOrder">Buy</a></h3>
+            <h3 asp-action="Menu" style="color: #764232; font-family: 'Quicksand', sans-serif; width: 30%; text-align: center; vertical-align: top; margin: auto;"><a asp-action="Menu">Back</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = -333 })</a></h3>
             <br />
         </div>
     </div>

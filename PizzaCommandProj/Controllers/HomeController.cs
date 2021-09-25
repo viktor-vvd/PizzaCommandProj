@@ -290,6 +290,7 @@ namespace PizzaCommandProj.Controllers
                         }
                     }
                 }
+                ViewBag.Amount = o.Amount;
                 return View("AllCart", cartList);
             }
         } 
