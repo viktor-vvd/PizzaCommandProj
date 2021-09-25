@@ -5,10 +5,10 @@
 }
 html, body {
     display: inline-block;
-    /*background-color: #004352;
-    overflow: hidden;*/
+    background-color: #251a11;
+    /*overflow: hidden;*/
     height: 1000px;
-   width: 100%;
+    width: 100%;
 }
 
 label, input, select {
