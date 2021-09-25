@@ -12,28 +12,77 @@
     <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: "Quicksand";
+        }
+
+        h3 a {
+            text-decoration: none;
+            position: relative;
+            color: #764232;
+        }
+
+            h3 a::before {
+                content: '';
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #764232;
+                transition: 0.2s;
+                transform: scaleX(0);
+            }
+
+            h3 a:hover:before {
+                transform: scaleX(1);
+            }
+
+        a {
+            text-decoration: none;
+            position: relative;
+            color: black;
+        }
+
+            a::before {
+                content: '';
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #000;
+                transition: 0.2s;
+                transform: scaleX(0);
+            }
+
+            a:hover:before {
+                transform: scaleX(1);
+            }
+
         .table {
-            width: 80%;
+            width: 90%;
             border: none;
             margin-bottom: 20px;
             margin: auto;
+            opacity: 1;
         }
 
             .table thead th {
-                font-family: 'Roboto Condensed', sans-serif;
+                font-family: "Quicksand";
                 border: none;
                 padding: 10px 15px;
                 background: #764232;
                 font-size: 14px;
-                border-left: 1px solid #ddd;
-                border-right: 1px solid #ddd;
+                border-left: 0px solid #ddd;
+                border-right: 0px solid #ddd;
                 text-align: center;
             }
 
             .table tbody td {
-                font-family: 'Roboto Condensed', sans-serif;
-                border-left: 1px solid #ddd;
-                border-right: 1px solid #ddd;
+                font-family: "Quicksand";
+                border-left: 0px solid #ddd;
+                border-right: 0px solid #ddd;
                 padding: 10px 15px;
                 font-size: 14px;
                 vertical-align: top;
@@ -54,18 +103,18 @@
             }
 
             .table tfoot th {
-                font-family: 'Roboto Condensed', sans-serif;
+                font-family: "Quicksand";
                 border: none;
                 padding: 10px 15px;
                 background: #764232;
                 font-size: 14px;
-                border-left: 1px solid #ddd;
-                border-right: 1px solid #ddd;
+                border-left: 0px solid #ddd;
+                border-right: 0px solid #ddd;
                 text-align: center;
             }
 
             .table tfoot td {
-                font-family: 'Roboto Condensed', sans-serif;
+                font-family: "Quicksand";
                 border-left: 1px solid #ddd;
                 border-right: 1px solid #ddd;
                 padding: 10px 15px;
@@ -75,27 +124,33 @@
                 text-align: center;
             }
 
-        /*.whiteBack {
+        .whiteBack {
+            margin-top: 1%;
+            margin-bottom: 1%;
             border-radius: 10px;
             background-color: white;
             width: 80%;
-            height: 1000px;
+            height: 98%;
             position: absolute;
-            left: 100px;
+            left: 10%;
             opacity: 0.7;
-        }*/
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="mainanim" class="mainP">
         @*<p>
-                <a asp-action="Create">Create New</a>
-            </p>*@
-        <div style="padding-top: 100px;">
-            @*<div class="whiteBack">*@
-            <p style="color: white; font-family: 'Roboto Condensed', sans-serif; font-size: 76px; text-align: center;">Cart</p>
-            <table class="table" border="1">
-                <thead>
+            <a asp-action="Create">Create New</a>
+        </p>*@
+        <div class="whiteBack"></div>
+        <div style="padding-top: 1%; z-index: 10; width: 80%; margin: auto;">
+            <br />
+            <h3 style="color: #764232; opacity: 1; font-family: 'Quicksand', sans-serif; text-align: center;">Cart</h3>
+            <br />
+            <table class="table" border="0">
+                <thead style="color: white;">
                     <tr>
                         <th scope="col">
                             @Html.DisplayNameFor(model => model.Name)
@@ -113,7 +168,6 @@
                             @Html.DisplayNameFor(model => model.Amount)
                         </th>
                         <th scope="col">
-                            Action
                         </th>
                     </tr>
                 </thead>
@@ -131,12 +185,12 @@
                                 @Html.DisplayFor(modelItem => item.Price)$
                             </td>
                             <td>
+                                @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
                                 @Html.DisplayFor(modelItem => item.Quantity)
+                                @Html.ActionLink("-", "MinusOneCart", new { dishId = item.DishId })
                             </td>
                             <td>
-                                @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
                                 @Html.DisplayFor(modelItem => item.Amount)
-                                @Html.ActionLink("-", "MinusOneCart", new { dishId = item.DishId })
                             </td>
                             <td>
                                 @Html.ActionLink("Delete", "DeleteOneCart", new { dishId = item.DishId })
@@ -144,17 +198,14 @@
                         </tr>
                     }
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="col" colspan="2">Total:</th>
-                        <td colspan="2">0.00$</td>
-                    </tr>
-                </tfoot>
             </table>
-            <p asp-action="Menu" style="color: white; font-family: 'Roboto Condensed', sans-serif; font-size: 46px; text-align: right;">Back</p>
+            <br />
+            <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Total: 0.00</h3>
+            <br />
+            <h3 asp-action="Menu" style="color: #764232; font-family: 'Quicksand', sans-serif; width: 30%; text-align: center; vertical-align: top; margin: auto;"><a asp-action="Menu">Back</a> | <a asp-action="NewOrder">Buy</a></h3>
+            <br />
         </div>
-        </div>
-    @*</div>*@
+    </div>
     <script src="~/js/mainTable.js"></script>
     <script src="~/js/p5.min.js" type="text/javascript"></script>
     <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
