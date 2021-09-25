@@ -142,7 +142,7 @@ h4, h3, h2 {
 #shape {
     stroke-width: 6px;
     fill: transparent;
-    stroke: #764232;
+    stroke: white;
     stroke-dasharray: 85 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
@@ -171,7 +171,7 @@ h4, h3, h2 {
     stroke-dasharray: 50 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
-    stroke: #251a11;
+    stroke: #764232;
 }
 @media (max-width: 480px) {
 
@@ -305,7 +305,7 @@ h4, h3, h2 {
     #shape {
         stroke-width: 6px;
         fill: transparent;
-        stroke: #764232;
+        stroke: white;
         stroke-dasharray: 85 400;
         stroke-dashoffset: -220;
         transition: 1s all ease;
@@ -332,7 +332,7 @@ h4, h3, h2 {
         stroke-dasharray: 50 0;
         stroke-width: 3px;
         stroke-dashoffset: 0;
-        stroke: #251a11;
+        stroke: #764232;
     }
 }
 
