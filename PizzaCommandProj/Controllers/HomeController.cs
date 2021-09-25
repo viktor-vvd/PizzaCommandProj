@@ -220,26 +220,41 @@ namespace PizzaCommandProj.Controllers
         }
         public IActionResult NewOrder(int dishId)
         {
-            Order o = CurOrder; 
+            try
+            {
+
+                Order o = CurOrder; 
             if (dishId != -333)
             {
                 o = AddToCart(dishId);
             }
             ViewBag.DishAmount = o.Amount;
             return View("NewOrder");
+            }
+            catch
+            {
+                return Redirect("Menu");
+            }
         }
 
         [HttpPost]
         public IActionResult NewOrder(Order @order)
         {
-            order.Amount = CurOrder.Amount;
-            order.DishesId = CurOrder.DishesId;
-            order.Status = "Confirmed"; 
-            order.Amount = CurOrder.Amount;
-            db.Orders.Add(@order);
-            db.SaveChanges();
-            Response.Cookies.Delete("order");
-            return RedirectToAction("OrderSuccess");
+            try
+            {
+                order.Amount = CurOrder.Amount;
+                order.DishesId = CurOrder.DishesId;
+                order.Status = "Confirmed"; 
+                order.Amount = CurOrder.Amount;
+                db.Orders.Add(@order);
+                db.SaveChanges();
+                Response.Cookies.Delete("order");
+                return RedirectToAction("OrderSuccess");
+            }
+            catch
+            {
+                return Redirect("Menu");
+            }
         }
 
         [HttpGet]
@@ -253,13 +268,17 @@ namespace PizzaCommandProj.Controllers
             Order o;
             if (!Request.Cookies.ContainsKey("order"))
             {
+                ViewBag.Amount = 0;
                 return View("AllCart", new List<CartItem>());
             }
             else
                 o = CurOrder;
             List<CartItem> cartList = new List<CartItem>();
             if (o.DishesId == "")
+            {
+                ViewBag.Amount = 0;
                 return View("AllCart", new List<CartItem>());
+            }
             else
             {
                 List<string> result = o.DishesId.Split('~').ToList();

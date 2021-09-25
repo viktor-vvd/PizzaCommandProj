@@ -151,59 +151,70 @@
             <br />
             <h3 style="color: #764232; opacity: 1; font-family: 'Quicksand', sans-serif; text-align: center;">Cart</h3>
             <br />
-            <table class="table" border="0">
-                <thead style="color: white;">
-                    <tr>
-                        <th scope="col">
-                            @Html.DisplayNameFor(model => model.Name)
-                        </th>
-                        <th scope="col">
-                            @Html.DisplayNameFor(model => model.Category)
-                        </th>
-                        <th scope="col">
-                            @Html.DisplayNameFor(model => model.Price)
-                        </th>
-                        <th scope="col">
-                            @Html.DisplayNameFor(model => model.Quantity)
-                        </th>
-                        <th scope="col">
-                            @Html.DisplayNameFor(model => model.Amount)
-                        </th>
-                        <th scope="col">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+            @if (Model.Count() == 0)
+            {
+                <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Your Cart is Empty</h3>
+                <br />
+
+            }
+            else
+            {
+                <table class="table" border="0">
+                    <thead style="color: white;">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Category)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Price)
-                            </td>
-                            <td>
-                                @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
-                                @Html.DisplayFor(modelItem => item.Quantity)
-                                @Html.ActionLink("-", "MinusOneCart", new { dishId = item.DishId })
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Amount)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Delete", "DeleteOneCart", new { dishId = item.DishId })
-                            </td>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Category)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </th>
+                            <th scope="col">
+                            </th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-            <br />
-            <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Total: @ViewBag.Amount.ToString()</h3>
-            <br />
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("+", "AddOneCart", new { dishId = item.DishId })
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                    @Html.ActionLink("-", "MinusOneCart", new { dishId = item.DishId })
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "DeleteOneCart", new { dishId = item.DishId })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+                <h3 style="color: #764232; font-family: 'Quicksand', sans-serif; text-align: center;">Total: @ViewBag.Amount.ToString()</h3>
+                <br />
+            }
+
             <h3 asp-action="Menu" style="color: #764232; font-family: 'Quicksand', sans-serif; width: 30%; text-align: center; vertical-align: top; margin: auto;"><a asp-action="Menu">Back</a> ~ <a style="color: #764232;" href="#">@Html.ActionLink("Buy", "NewOrder", new { dishId = -333 })</a></h3>
             <br />
         </div>
