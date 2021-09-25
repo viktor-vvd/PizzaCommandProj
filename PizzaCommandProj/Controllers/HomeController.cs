@@ -197,25 +197,26 @@ namespace PizzaCommandProj.Controllers
         public IActionResult MinusOneCart(int dishId)
         {
             MinusOneFromCart(dishId);
-            return AllCart();
+            return Redirect("AllCart");
         }
 
         public IActionResult AddOneCart(int dishId)
         {
             AddToCart(dishId);
-            return AllCart();
+            return Redirect("AllCart");
+            //return AllCart();
         }
 
         public IActionResult DeleteOneCart(int dishId)
         {
             DeleteFromCart(dishId);
-            return AllCart();
+            return Redirect("AllCart");
         }
 
         public IActionResult AddCart(int dishId)
         {
             AddToCart(dishId);
-            return View("Menu", db.Dishes);
+            return Redirect("Menu");
         }
         public IActionResult NewOrder(int dishId)
         {
