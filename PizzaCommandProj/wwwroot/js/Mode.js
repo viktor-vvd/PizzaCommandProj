@@ -75,6 +75,32 @@ function func() {
             color: 0x764232,
             backgroundColor: 0x251a11
         });
+    if (localStorage.count % 2 == 0)
+        VANTA.TOPOLOGY({
+            el: "#logoanim",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 150.00,
+            minWidth: 150.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x48270c,
+            backgroundColor: 0xf0d6b3
+        });
+    else
+        VANTA.TOPOLOGY({
+            el: "#logoanim",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 150.00,
+            minWidth: 150.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x764232,
+            backgroundColor: 0x251a11
+        });
 }
 
 function funcMenu() {
