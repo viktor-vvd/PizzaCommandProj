@@ -1,5 +1,4 @@
 ﻿* {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -108,8 +107,8 @@ a {
         letter-spacing: 1px;
         align-content: center;
         opacity: 1;
-        width: 25%;
-        height: 25%;
+        width: 475px;
+        height: 222px;
         margin-left: 37.5%;
         margin-top: 15%;
         position: absolute;
@@ -138,6 +137,25 @@ a {
         }
     }
 }
+
+@media screen and (max-width: 970px) {
+    .head a {
+        width: 237.25px;
+        height: 111px;
+        margin-left: 25%;
+        margin-top: 30%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .head a {
+        width: 237.25px;
+        height: 111px;
+        margin-left: 25%;
+        margin-top: 30%;
+    }
+}
+
 
 h1 {
     text-rendering: optimizeLegibility;
@@ -449,20 +467,42 @@ h1 {
 }
 
 .content .col-left {
+    /*margin-top: -600px;*/
     order: 3;
     width: 400px;
+}
+
+.left-bottom-img {
+    margin-top: -350px;
 }
 
 @media screen and (max-width: 1200px) {
     .content .col-left {
         width: 333px;
     }
+
+    .left-bottom-img {
+        margin-top: -400px;
+    }
+
+    .content .col-left .informations ul {
+        margin-left: 30px;
+    }
 }
 
 @media screen and (max-width: 970px) {
     .content .col-left {
+        margin-top: 0px;
         order: 4;
         width: 100%;
+    }
+
+    .left-bottom-img {
+        margin-top: 0px;
+    }
+
+    .content .col-left .informations ul {
+        margin-left: 30px;
     }
 }
 
@@ -662,10 +702,19 @@ h1 {
     order: 4;
     width: 670px;
 }
+.tumbler__wrapper {
+    position: absolute; 
+    width: 2.5%; 
+    left: 0px; 
+    margin-left: 48.75%;
+}
 
 @media screen and (max-width: 1200px) {
     .content .col-right {
         width: 554px;
+    }
+    .tumbler__wrapper {
+        margin-left: 20%;
     }
 }
 
@@ -675,6 +724,9 @@ h1 {
         width: 100%;
         padding-left: 35px;
         padding-right: 35px;
+    }
+    .tumbler__wrapper {
+        margin-left: 5%;
     }
 }
 
@@ -762,8 +814,10 @@ h1 {
 }
 
 footer {
-    height: 100px;
-    padding: 40px 0;
+    height: 60px;
+    padding-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -773,7 +827,7 @@ footer {
 @media screen and (max-width: 970px) {
     footer {
         height: auto;
-        padding: 70px 0 90px;
+        padding: 70px 0;
         margin-top: 50px;
     }
 }

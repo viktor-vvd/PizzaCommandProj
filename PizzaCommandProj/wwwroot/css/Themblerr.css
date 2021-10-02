@@ -32,7 +32,6 @@
 }
 
 .tumbler__wrapper {
-    margin-left: auto;
     width: 50px;
     height: 30px;
     background-color: black;
@@ -45,7 +44,6 @@
     cursor: pointer;
     display: flex;
     position: absolute;
-    left: 850px;
 }
 
 .mysvg {
@@ -75,7 +73,7 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #eee;
 }
