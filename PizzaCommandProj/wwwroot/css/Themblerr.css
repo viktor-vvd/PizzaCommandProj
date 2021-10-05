@@ -62,7 +62,7 @@
 }
 
 .tumbler--night-mode {
-    transform: translateX(calc(100% - 2px));
+    transform: translateX(calc(100% + 10px));
 }
 
 .sun-svg,

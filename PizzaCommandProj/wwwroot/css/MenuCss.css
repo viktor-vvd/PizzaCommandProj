@@ -13,8 +13,21 @@ html, body {
 }
 
 li {
-    color: black;
+    color: #251a11;
     list-style-type: none;
+}
+
+.whiteBack {
+    border-radius: 15px;
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    height: 98%;
+    position: absolute;
+    opacity: 0.7;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 30%;
 }
 
 .content {
@@ -22,7 +35,10 @@ li {
     font-family: "Quicksand";
     padding-top: 1%;
     height: 100%;
-    position: absolute;
+    width: 40%;
+    padding-bottom: 1%;
+    margin: auto;
+    position: inherit;
 }
 
 a {
@@ -52,16 +68,6 @@ h1, h3, h2 {
     font-family: "Quicksand";
 }
 
-.whiteBack {
-    border-radius: 15px;
-    background-color: white;
-    width: 750px;
-    height: 1030px;
-    position: absolute;
-    left: 580px;
-    opacity: 0.7;
-}
-
 .mainP {
     height: 100%;
     width: 100%;
@@ -70,10 +76,17 @@ h1, h3, h2 {
 
 @media (max-width: 480px) {
 
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
     html, body {
-        background-image: url('../bg-bourse.jpg');
-        background-attachment: fixed, scroll;
-        background-repeat: no-repeat, repeat-y;
+        display: inline-block;
+        background-color: #251a11;
+        /*overflow: hidden;*/
+        width: 100%;
     }
 
     li {
@@ -86,13 +99,16 @@ h1, h3, h2 {
         font-family: "Quicksand";
         padding-top: 1%;
         height: 100%;
-        position: absolute;
+        width: 40%;
+        padding-bottom: 1%;
+        margin: auto;
+        position: inherit;
     }
 
     a {
         text-decoration: none;
         position: relative;
-        color: #764232;
+        color: black;
     }
 
     .center a::before {
@@ -117,13 +133,15 @@ h1, h3, h2 {
     }
 
     .whiteBack {
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: white;
-        width: 350px;
+        width: 80%;
         height: 100%;
         position: absolute;
-        left: 10px;
         opacity: 0.7;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 10%;
     }
 }
 

@@ -3,47 +3,55 @@
     margin: 0;
     padding: 0;
 }
+
 html, body {
     display: inline-block;
     background-color: #251a11;
     /*overflow: hidden;*/
-    height: 1000px;
+    height: 100%;
     width: 100%;
 }
 
 label, input, select {
-    color: black;
+    color: #251a11;
     list-style-type: none;
     padding: 10px;
     margin: 10px 0;
     width: 150px;
 }
+
 form {
     margin-top: 5%;
 }
+
 input[type=submit] {
     background: none;
     border: none;
     text-align: center;
     font-family: "Quicksand";
 }
+
 .mainP {
     height: 100%;
     width: 100%;
 }
+
 .content {
     text-align: center;
     font-family: "Quicksand";
-    padding-top: 5%;
+    padding-top: 1%;
     height: 100%;
-    position: absolute;
+    width: 40%;
+    padding-bottom: 1%;
+    margin: auto;
+    position: inherit;
 }
 
 
 a {
     text-decoration: none;
     position: relative;
-    color: black;
+    color: #251a11;
 }
 
 .center a {
@@ -59,7 +67,7 @@ a {
         position: absolute;
         width: 100%;
         height: 1px;
-        background-color: #000;
+        background-color: #251a11;
         transition: 0.2s;
         transform: scaleX(0);
     }
@@ -96,19 +104,24 @@ a {
     top: 0;
     height: 100%;
 }
+
 h4, h3, h2 {
     color: #764232;
     font-family: "Quicksand";
 }
+
 .whiteBack {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: white;
-    width: 750px;
-    height: 430px;
-    position:absolute;
-    left: 600px;
+    width: 40%;
+    height: 98%;
+    position: absolute;
     opacity: 0.7;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 30%;
 }
+
 #personal {
     color: white;
     text-decoration: none;
@@ -142,7 +155,7 @@ h4, h3, h2 {
 #shape {
     stroke-width: 6px;
     fill: transparent;
-    stroke: white;
+    stroke: #251a11;
     stroke-dasharray: 85 400;
     stroke-dashoffset: -220;
     transition: 1s all ease;
@@ -173,30 +186,37 @@ h4, h3, h2 {
     stroke-dashoffset: 0;
     stroke: #764232;
 }
+
 @media (max-width: 480px) {
 
-    html, body {
-        background-image: url("../1579552126_3-p-foni-dlya-menyu-9.jpg");
-        background-attachment: fixed, scroll;
-        background-repeat: no-repeat, repeat-y;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    li {
-        color: black;
-        list-style-type: none;
+
+    html, body {
+        display: inline-block;
+        background-color: #251a11;
+        /*overflow: hidden;*/
+        width: 100%;
     }
 
     .content {
-    text-align: center;
-    font-family: "Quicksand";
-    padding-top: 1%;
-    height: 100%;
-    position: absolute;
+        text-align: center;
+        font-family: "Quicksand";
+        padding-top: 1%;
+        height: 100%;
+        width: 80%;
+        padding-bottom: 1%;
+        margin: auto;
+        position: inherit;
     }
 
     a {
         text-decoration: none;
         position: relative;
-        color: black;
+        color: #251a11;
     }
 
     .center a {
@@ -205,21 +225,21 @@ h4, h3, h2 {
         color: #764232;
     }
 
-    .center a::before {
-        content: '';
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background-color: #000;
-        transition: 0.2s;
-        transform: scaleX(0);
-    }
+        .center a::before {
+            content: '';
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            transition: 0.2s;
+            transform: scaleX(0);
+        }
 
-    .center a:hover:before {
-        transform: scaleX(1);
-    }
+        .center a:hover:before {
+            transform: scaleX(1);
+        }
 
 
 
@@ -257,16 +277,17 @@ h4, h3, h2 {
     }
 
     .whiteBack {
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: white;
-        width: 350px;
-        height: 20%;
+        width: 80%;
+        height: 98%;
         position: absolute;
-        left: 10px;
         opacity: 0.7;
-
-
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 10%;
     }
+
     #personal {
         color: white;
         text-decoration: none;
@@ -305,7 +326,7 @@ h4, h3, h2 {
     #shape {
         stroke-width: 6px;
         fill: transparent;
-        stroke: white;
+        stroke: #251a11;
         stroke-dasharray: 85 400;
         stroke-dashoffset: -220;
         transition: 1s all ease;
@@ -313,7 +334,7 @@ h4, h3, h2 {
 
 
     #text {
-        margin-top: -35px;
+        margin-top: -55px;
         text-align: center;
     }
 

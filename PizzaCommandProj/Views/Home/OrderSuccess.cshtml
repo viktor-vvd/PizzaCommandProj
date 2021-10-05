@@ -4,75 +4,67 @@
     ViewData["Title"] = "Confirmed Successfully - HIDE";
 }
 
-    <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="~/css/OrderS.css">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="~/css/OrderS.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="mainanim" class="mainP">
-            <div class="content">
-                <div class="whiteBack">
-                    </br>
-                    <h1 style="font-family: 'Avenir',sans-serif; font-weight: 100"> <p class="center"><a asp-action="Index" style="color: #764232;">HIDE</a></p></h1>
-                    <br />
-                    <h2>Order Confirmed Successfully!</h2>
-                    <hr>
-
-                    <div class="svg-wrapper">
-                        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                            <div class="textP">
-                                <p>
-                                    Expect a call from the operator.<br />
-                                    Delivery will take about 30 minutes
-                                </p>
-                            </div>
-                            <rect id="shape" height="40" width="150" />
-                            <div id="text">
-                                <a asp-action="Menu">Back to Menu<span class="spot"></span></a>
-                            </div>
-                        </svg>
-                    </div>
-                </div>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="mainanim" style="height:100%;">
+        <div class="whiteBack"></div>
+        <div class="content">
+            </br>
+            <h1 style="font-family: 'Avenir',sans-serif; font-weight: 100"> <p class="center"><a asp-action="Index" style="color: #764232;">HIDE</a></p></h1>
+            <br />
+            <h2>Order Confirmed Successfully!</h2>
+            <hr>
+            </br>
+            <p class="center" style=" font-size: 24px; ">
+                Expect a call from the operator.<br />
+                Delivery will take about 30 minutes
+            </p>
+            <div style="padding-top: 10px;">
+                <h3><p class="center"><a asp-action="Menu" style="color: #764232;">Back</a></p></h3>
             </div>
         </div>
-            <script src="~/js/p5.min.js" type="text/javascript"></script>
-            <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
+    </div>
+    <script src="~/js/p5.min.js" type="text/javascript"></script>
+    <script src="~/js/vanta.topology.min.js" type="text/javascript"></script>
 
-            <script>
-                if (localStorage.count % 2 == 0) {
-                    document.body.style.backgroundColor = "#251a11;";
-                    VANTA.TOPOLOGY({
-                        el: "#mainanim",
-                        mouseControls: true,
-                        touchControls: true,
-                        gyroControls: false,
-                        minHeight: 1080.00,
-                        minWidth: 1861.00,
-                        scale: 1.00,
-                        scaleMobile: 1.00,
-                        color: 0x48270c,
-                        backgroundColor: 0xf0d6b3
-                    });
-                }
-                else {
-                    document.body.style.backgroundColor = "#F5F3C7;";
-                    VANTA.TOPOLOGY({
-                        el: "#mainanim",
-                        mouseControls: true,
-                        touchControls: true,
-                        gyroControls: false,
-                        minHeight: 1080.00,
-                        minWidth: 1861.00,
-                        scale: 1.00,
-                        scaleMobile: 1.00,
-                        color: 0x764232,
-                        backgroundColor: 0x251a11
-                    });
-                }
-            </script>
-    </body>
-    </html>
+    <script>
+        if (localStorage.count % 2 == 0) {
+            document.body.style.backgroundColor = "#251a11;";
+            VANTA.TOPOLOGY({
+                el: "#mainanim",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 1080.00,
+                minWidth: 1861.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x48270c,
+                backgroundColor: 0xf0d6b3
+            });
+        }
+        else {
+            document.body.style.backgroundColor = "#F5F3C7;";
+            VANTA.TOPOLOGY({
+                el: "#mainanim",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 1080.00,
+                minWidth: 1861.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x764232,
+                backgroundColor: 0x251a11
+            });
+        }
+    </script>
+</body>
+</html>
 
