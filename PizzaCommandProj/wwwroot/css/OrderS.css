@@ -7,7 +7,7 @@
 html, body {
     display: inline-block;
     background-color: #251a11;
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 100%;
     width: 100%;
 }
@@ -18,19 +18,38 @@ input[type=submit] {
     text-align: center;
     font-family: "Quicksand";
 }
+
 .content {
     text-align: center;
     font-family: "Quicksand";
     padding-top: 1%;
     height: 100%;
-    position: absolute;
-    padding-top: 300px;
+    width: 40%;
+    padding-bottom: 1%;
+    margin: auto;
+    position: inherit;
 }
 
 a {
     text-decoration: none;
     position: relative;
-    color: black;
+    color: #251a11;
+}
+
+.center a::before {
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    transition: 0.2s;
+    transform: scaleX(0);
+}
+
+.center a:hover:before {
+    transform: scaleX(1);
 }
 .from-center:before {
     top: 0;
@@ -60,114 +79,45 @@ a {
     height: 100%;
 }
 h4, h2 {
-    color: #004352;
+    color: #764232;
     font-family: "Quicksand";
 }
 .whiteBack {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: white;
-    width: 750px;
-    height: 60%;
-    position:absolute;
-    left: 600px;
+    width: 40%;
+    margin: auto;
+    height: 98%;
+    position: absolute;
     opacity: 0.7;
-}
-
-#personal {
-    color: white;
-    text-decoration: none;
-    position: absolute;
-    bottom: 15px;
-    right: 2%;
-}
-
-.mainP {
-    height: 100%;
-    width: 100%;
-}
-
-.spot {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-}
-
-.svg-wrapper {
-    margin-top: 0;
-    position: relative;
-    width: 150px;
-    height: 40px;
-    display: inline-block;
-    border-radius: 3px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 55px;
-}
-
-#shape {
-    stroke-width: 6px;
-    fill: transparent;
-    stroke: #009FFD;
-    stroke-dasharray: 85 400;
-    stroke-dashoffset: -220;
-    transition: 1s all ease;
-}
-
-.textP {
-    margin-top: -70px;
-    margin-left: -120px;
-    text-align: center;
-    color: black;
-    width: 400px;
-    font-size: 24px;
-}
-
-#text {
-    margin-top: 20px;
-    text-align: center;
-    color: black;
-
-}
-
-
-
-    #text a {
-        color: black;
-        text-decoration: none;
-        font-weight: 100;
-        font-size: 1.1em;
-    }
-
-
-
-
-.svg-wrapper:hover #shape {
-    stroke-dasharray: 50 0;
-    stroke-width: 3px;
-    stroke-dashoffset: 0;
-    stroke: #06D6A0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 30%;
 }
 @media (max-width: 480px) {
 
-    html, body {
-        background-image: url("../1579552126_3-p-foni-dlya-menyu-9.jpg");
-        background-attachment: fixed, scroll;
-        background-repeat: no-repeat, repeat-y;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    li {
-        color: black;
-        list-style-type: none;
+
+    html, body {
+        display: inline-block;
+        background-color: #251a11;
+        /*overflow: hidden;*/
+        width: 100%;
     }
 
     .content {
-    text-align: center;
-    font-family: "Quicksand";
-    padding-top: 1%;
-    height: 100%;
-    position: absolute;
+        text-align: center;
+        font-family: "Quicksand";
+        padding-top: 1%;
+        height: 100%;
+        width: 40%;
+        padding-bottom: 1%;
+        margin: auto;
+        position: inherit;
     }
 
     a {
@@ -176,49 +126,37 @@ h4, h2 {
         color: black;
     }
 
-    .from-center:before {
-        top: 0;
-        left: 50%;
-        height: 100%;
-        width: 0;
-        border: 1px solid var(--inv);
-        border-left: 0;
-        border-right: 0;
-    }
-
-    .from-center:after {
+    .center a::before {
+        content: '';
         bottom: 0;
         left: 0;
-        height: 0;
+        position: absolute;
         width: 100%;
-        background: var(--inv);
+        height: 1px;
+        background-color: #000;
+        transition: 0.2s;
+        transform: scaleX(0);
     }
 
-    .from-center:hover:before {
-        left: 0;
-        width: 100%;
+    .center a:hover:before {
+        transform: scaleX(1);
     }
 
-    .from-center:hover:after {
-        top: 0;
-        height: 100%;
-    }
-
-    h4, h2 {
-        color: #2150FD;
+    h1, h3, h2 {
+        color: #764232;
         font-family: "Quicksand";
     }
 
     .whiteBack {
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: white;
-        width: 350px;
-        height: 20%;
+        width: 80%;
+        height: 100%;
         position: absolute;
-        left: 10px;
         opacity: 0.7;
-
-
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 10%;
     }
     .whiteBack1 {
         border-radius: 10px;
@@ -229,72 +167,8 @@ h4, h2 {
         left: 600px;
         opacity: 0.7;
     }
-    #personal {
-        color: white;
-        text-decoration: none;
-        position: absolute;
-        bottom: 15px;
-        right: 2%;
-    }
-
-
-
-    .spot {
-        position: absolute;
-        width: 100%;
+    #defaultCanvas0{
         height: 100%;
-        top: 0;
-        left: 0;
-    }
-
-
-
-    .svg-wrapper {
-        margin-top: 0;
-        position: relative;
-        width: 150px;
-        /*make sure to use same height/width as in the html*/
-        height: 40px;
-        display: inline-block;
-        border-radius: 3px;
-        margin-left: 5px;
-        margin-right: 5px
-    }
-
-
-
-
-    #shape {
-        stroke-width: 6px;
-        fill: transparent;
-        stroke: #009FFD;
-        stroke-dasharray: 85 400;
-        stroke-dashoffset: -220;
-        transition: 1s all ease;
-    }
-
-
-    #text {
-        margin-top: -35px;
-        text-align: center;
-    }
-
-
-
-        #text a {
-            color: white;
-            text-decoration: none;
-            font-weight: 100;
-            font-size: 1.1em;
-        }
-
-
-
-    .svg-wrapper:hover #shape {
-        stroke-dasharray: 50 0;
-        stroke-width: 3px;
-        stroke-dashoffset: 0;
-        stroke: #06D6A0;
     }
 }
 
