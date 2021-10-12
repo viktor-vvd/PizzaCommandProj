@@ -223,13 +223,13 @@ namespace PizzaCommandProj.Controllers
             try
             {
 
-                Order o = CurOrder; 
-            if (dishId != -333)
-            {
-                o = AddToCart(dishId);
-            }
-            ViewBag.DishAmount = o.Amount;
-            return View("NewOrder");
+                Order o = new Order();
+                if (dishId != -333)
+                {
+                    o = AddToCart(dishId);
+                }
+                ViewBag.DishAmount = o.Amount;
+                return View("NewOrder");
             }
             catch
             {

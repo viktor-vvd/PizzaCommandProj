@@ -175,8 +175,71 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 return RedirectToAction("Index");
             }
-            ViewBag.User = CurUser; 
-            return View("AllOrders", db.Orders);
+            ViewBag.User = CurUser;
+            List<Order> Orders = db.Orders.ToList();
+            foreach (Order O in Orders)
+            {
+                string finalIds = "";
+                List<string> result = O.DishesId.Split('~').ToList();
+                while (result.Count != 0)
+                {
+                    foreach (var dishid in result)
+                    {
+                        if (!dishid.Contains("~") && dishid.Length != 0)
+                        {
+                            int count = 0;
+                            foreach (var dishid2 in result)
+                            {
+                                if (!dishid2.Contains("~") && dishid2.Length != 0)
+                                {
+                                    if (dishid == dishid2)
+                                    {
+                                        count++;
+                                    }
+                                }
+                            }
+                            if (finalIds != "")
+                            {
+                                finalIds += (" ~ " + dishid);
+                                if(count>1)
+                                    finalIds += "x" + count.ToString();
+                            }
+                            else if (finalIds == "")
+                            {
+                                finalIds += (dishid);
+                                if (count > 1)
+                                    finalIds += "x" + count.ToString();
+                            }
+                            while (result.Contains(dishid.ToString()))
+                            {
+                                int index = result.IndexOf(dishid.ToString());
+                                if (index >= 0)
+                                {
+                                    result.RemoveAt(index);
+                                    //if (result[0] == "~")
+                                    //    result.RemoveAt(0);
+                                    //else if (result[result.Count - 1] == "~")
+                                    //    result.RemoveAt(result.Count - 1);
+                                    //else
+                                    //{
+                                    //    for (int i = 1; i < result.Count - 1; i++)
+                                    //    {
+                                    //        if (result[i] == "~" && result[i - 1] == "~")
+                                    //            result.RemoveAt(i);
+                                    //        else if (result[i] == "~" && result[i + 1] == "~")
+                                    //            result.RemoveAt(i);
+                                    //    }
+                                    //}
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                O.DishesId = finalIds;
+            }
+
+            return View("AllOrders", Orders);
         }
 
         public IActionResult CanceledOrder(int orderId)
