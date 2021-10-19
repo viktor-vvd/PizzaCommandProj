@@ -99,18 +99,21 @@ namespace PizzaCommandProj.Controllers
                 if(index>=0)
                 {
                     result.RemoveAt(index);
-                    if (result[0] == "~")
-                        result.RemoveAt(0);
-                    else if (result[result.Count-1] == "~")
-                        result.RemoveAt(result.Count - 1);
-                    else
+                    if (result.Count > 0)
                     {
-                        for(int i=1; i<result.Count-1;i++)
+                        if (result[0] == "~")
+                            result.RemoveAt(0);
+                        else if (result[result.Count - 1] == "~")
+                            result.RemoveAt(result.Count - 1);
+                        else
                         {
-                            if(result[i]=="~"&&result[i-1]=="~")
-                                result.RemoveAt(i);
-                            else if(result[i]=="~"&&result[i+1]=="~")
-                                result.RemoveAt(i);
+                            for (int i = 1; i < result.Count - 1; i++)
+                            {
+                                if (result[i] == "~" && result[i - 1] == "~")
+                                    result.RemoveAt(i);
+                                else if (result[i] == "~" && result[i + 1] == "~")
+                                    result.RemoveAt(i);
+                            }
                         }
                     }
                 }
@@ -158,18 +161,21 @@ namespace PizzaCommandProj.Controllers
                     if (index >= 0)
                     {
                         result.RemoveAt(index);
-                        if (result[0] == "~")
-                            result.RemoveAt(0);
-                        else if (result[result.Count - 1] == "~")
-                            result.RemoveAt(result.Count - 1);
-                        else
+                        if (result.Count > 0)
                         {
-                            for (int i = 1; i < result.Count - 1; i++)
+                            if (result[0] == "~")
+                                result.RemoveAt(0);
+                            else if (result[result.Count - 1] == "~")
+                                result.RemoveAt(result.Count - 1);
+                            else
                             {
-                                if (result[i] == "~" && result[i - 1] == "~")
-                                    result.RemoveAt(i);
-                                else if (result[i] == "~" && result[i + 1] == "~")
-                                    result.RemoveAt(i);
+                                for (int i = 1; i < result.Count - 1; i++)
+                                {
+                                    if (result[i] == "~" && result[i - 1] == "~")
+                                        result.RemoveAt(i);
+                                    else if (result[i] == "~" && result[i + 1] == "~")
+                                        result.RemoveAt(i);
+                                }
                             }
                         }
                     }
@@ -228,7 +234,7 @@ namespace PizzaCommandProj.Controllers
                 {
                     o = AddToCart(dishId);
                 }
-                ViewBag.DishAmount = o.Amount;
+                ViewBag.DishAmount = CurOrder.Amount;
                 return View("NewOrder");
             }
             catch
