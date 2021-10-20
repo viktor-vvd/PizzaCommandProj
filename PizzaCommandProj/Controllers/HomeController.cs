@@ -233,7 +233,9 @@ namespace PizzaCommandProj.Controllers
                 if (dishId != -333)
                 {
                     o = AddToCart(dishId);
+                    ViewBag.DishAmount = o.Amount;
                 }
+                else
                 ViewBag.DishAmount = CurOrder.Amount;
                 return View("NewOrder");
             }
