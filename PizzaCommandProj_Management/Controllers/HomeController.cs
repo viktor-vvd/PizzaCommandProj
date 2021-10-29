@@ -181,6 +181,13 @@ namespace PizzaCommandProj_Management.Controllers
             {
                 string finalIds = "";
                 List<string> result = O.DishesId.Split('~').ToList();
+                if(result.Contains(""))
+                {
+                    while(result.Contains(""))
+                    {
+                        result.Remove("");
+                    }
+                }
                 while (result.Count != 0)
                 {
                     foreach (var dishid in result)
